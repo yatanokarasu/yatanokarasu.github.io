@@ -1,0 +1,15 @@
+---
+layout: default
+title: Blogs
+---
+
+<ul class="posts">
+  {% for post in site.posts %}
+  <li class="post">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+      <span class="post-teaser-title">{{ post.title }}</span>
+      <span class="post-teaser-date">{{ post.date | date: "%d %B %Y" }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="technical memoizer" />
+    <link rel="stylesheet" href="{{ "/assets/vendor/font-awesome/css/font-awesome.css" | prepend: site.baseurl }}" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Memoizer</title>
+  </head>
+  
+  <body>
+    <article>
+      <header>
+        <h1><a href="/" class="logo">{{ site.title }}</a></h1>
+        <nav>
+          <ul class="menu">
+            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
+            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Categories</a></li>
+            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Tags</a></li>
+            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Archives</a></li>
+          </ul>
+        </nav>
+        
+        <ul class="social-links">
+          <li><a href="https://github.com/{{ site.author.github }}" class="social-links-entry" target="_blank"><i class="fa fa-github"></i></a></li>
+        </ul>
+      </header>
+      <aside>
+        <section>
+          <ul>
+            <li>Category</li>
+          </ul>
+        </section>
+      </aside>
+      {{ content }}
+      <footer>
+        <address>Yatanokarasu</address>
+      </footer>
+    </article>
+    <script src="{{ "/assets/vendor/highlight/highlight.pack.js" | prepend: site.baseurl }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+
+# Site title
+title: Memoizer
+
+# Authors
+author:
+    github:     yatanokarasu
+
+# Build settings
+markdown: kramdown
