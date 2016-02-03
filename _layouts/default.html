@@ -11,34 +11,43 @@
   </head>
   
   <body>
-    <article>
-      <header>
-        <h1><a href="/" class="logo">{{ site.title }}</a></h1>
-        <nav>
-          <ul class="menu">
-            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
-            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Categories</a></li>
-            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Tags</a></li>
-            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Archives</a></li>
-          </ul>
-        </nav>
-        
-        <ul class="social-links">
-          <li><a href="https://github.com/{{ site.author.github }}" class="social-links-entry" target="_blank"><i class="fa fa-github"></i></a></li>
+    <!-- Page Header -->
+    <header>
+      <h1><a href="/" class="logo">{{ site.title }}</a></h1>
+      <nav>
+        <ul class="menu">
+          <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
+          <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Categories</a></li>
+          <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Tags</a></li>
+          <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Archives</a></li>
         </ul>
-      </header>
-      <aside>
-        <section>
-          <ul>
-            <li>Category</li>
-          </ul>
-        </section>
-      </aside>
+      </nav>
+      
+      <!--<ul class="social-links">
+        <li><a href="https://github.com/{{ site.author.github }}" class="social-links-entry" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>-->
+    </header>
+    
+    <!-- Main -->
+    <main>
       {{ content }}
-      <footer>
-        <address>Yatanokarasu</address>
-      </footer>
-    </article>
+    </main>
+    
+    <!-- side -->
+    <aside>
+      <section>
+        <ul>
+          <li>Category</li>
+        </ul>
+      </section>
+    </aside>
+    
+    <!-- Page Footer -->
+    <footer>
+      <address>Yatanokarasu</address>
+    </footer>
+    
+    <!-- Script Loading -->
     <script src="{{ "/assets/vendor/highlight/highlight.pack.js" | prepend: site.baseurl }}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </body>
