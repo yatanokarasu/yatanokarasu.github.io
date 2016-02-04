@@ -1,4 +1,10 @@
 
 body {
-    background-color:  grey;
+    background-color:  lightgrey;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  white;
 }
