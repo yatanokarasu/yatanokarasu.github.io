@@ -13,15 +13,20 @@
   <body>
     <!-- Page Header -->
     <header>
-      <h1><a href="/" class="logo">{{ site.title }}</a></h1>
-      <nav>
-        <ul class="menu">
-          <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
-          <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Categories</a></li>
-          <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Tags</a></li>
-          <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Archives</a></li>
-        </ul>
-      </nav>
+      <div class="header-menu">
+        <a href="/" class="logo"><h2>{{ site.title }}</h2></a>
+        <nav>
+          <ul class="menu">
+            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
+            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Categories</a></li>
+            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Tags</a></li>
+            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Archives</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+      <div class="header-title">
+      </div>
       
       <!--<ul class="social-links">
         <li><a href="https://github.com/{{ site.author.github }}" class="social-links-entry" target="_blank"><i class="fa fa-github"></i></a></li>

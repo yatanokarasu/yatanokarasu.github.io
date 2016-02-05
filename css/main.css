@@ -1,21 +1,65 @@
+html {
+    margin          : 0;
+}
+
 
 body {
-    background-color:  #ECECEC;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+    background-color: #ECECEC;
+    margin          : 0;
+    padding         : 0;
+    width           : 100%;
+    height          : 100%;
 }
+
 
 header {
-    background-color:  white;
-    margin: 0;
-    width: 100%;
-    position:  fixed;
-    top: 0;
+    background-color: #2E2E2E;
+    margin          : 0;
+    min-height      : 300px;
 }
 
+
+header .header-menu {
+    background-color: white;
+    height          : 70px;
+    width           : 100%;
+    position        : fixed;
+    top             : 0;
+}
+
+
+.header-menu h2 {
+    float: left;
+}
+
+
+header .header-title {
+    text-align      : center;
+}
+
+
+nav {
+    position        : absolute;
+    width           : 500px;
+    left            : 0;
+    right           : 0;
+    margin          : 0 auto;
+}
+
+
+li {
+    float           : left;
+    list-style      : none;
+}
+
+
 main {
-    margin: 30px auto;
-    max-width: 800px;
+    margin          : 30px auto;
+    max-width       : 800px;
+    height: 3000px;
+}
+
+
+article {
+    background-color: white;
 }

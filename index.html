@@ -3,13 +3,12 @@ layout: default
 title: Blogs
 ---
 
-<ul class="posts">
-  {% for post in site.posts %}
-  <li class="post">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-      <span class="post-teaser-title">{{ post.title }}</span>
-      <span class="post-teaser-date">{{ post.date | date: "%d %B %Y" }}</span>
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+
+{% for post in site.posts %}
+<article>
+  <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+  <h4>{{ post.date | date: "%d %B %Y" }}</h4>
+</a>
+</li>
+</article>
+{% endfor %}
