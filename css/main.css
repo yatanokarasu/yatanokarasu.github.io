@@ -1,4 +1,4 @@
-html {
+/*html {
     margin          : 0;
 }
 
@@ -62,4 +62,66 @@ main {
 
 article {
     background-color: white;
+}
+*/
+
+html,
+body,
+header,
+nav,
+footer,
+div {
+    border: 1px solid red;
+    padding: 2px;
+}
+
+
+body {
+    background-color:   #ECECEC;
+    
+    margin:             0;
+}
+
+
+header {
+    background-color:   white;
+    
+    padding:            20px;
+}
+
+
+.page-title {
+    background-color:   #2E2E2E;
+    
+    height:             200px;
+}
+
+
+.articles {
+    max-width: 800px;
+    
+    padding:    0 0 20px;
+    margin:     0 auto;
+    
+    border:     0;
+}
+
+
+article {
+    background-color:   white;
+    
+    margin:             30px auto 0;
+    padding:            50px 80px;
+    
+    box-shadow:         0 0 10px 3px #ccc;
+}
+
+
+footer {
+    background-color:   #2E2E2E;
+}
+
+
+.footer-navigation {
+    margin:             0 auto;
 }

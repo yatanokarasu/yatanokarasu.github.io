@@ -2,9 +2,16 @@
 # Site title
 title: Memoizer
 
+words_per_minute: 200
+
 # Authors
 author:
     github:     yatanokarasu
 
 # Build settings
 markdown: kramdown
+
+paginate:   2
+
+gems:
+    - jekyll-paginate

@@ -7,13 +7,13 @@
     <meta name="description" content="technical memoizer" />
     <link rel="stylesheet" href="{{ "/assets/vendor/font-awesome/css/font-awesome.css" | prepend: site.baseurl }}" />
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" />
-    <title>Memoizer</title>
+    <title>{{ site.title }}</title>
   </head>
   
   <body>
     <!-- Page Header -->
     <header>
-      <div class="header-menu">
+      <!--<div class="header-menu">
         <a href="/" class="logo"><h2>{{ site.title }}</h2></a>
         <nav>
           <ul class="menu">
@@ -26,7 +26,7 @@
       </div>
       
       <div class="header-title">
-      </div>
+      </div>-->
       
       <!--<ul class="social-links">
         <li><a href="https://github.com/{{ site.author.github }}" class="social-links-entry" target="_blank"><i class="fa fa-github"></i></a></li>
@@ -35,7 +35,53 @@
     
     <!-- Main -->
     <main>
-      {{ content }}
+      <div class="contents-header">
+      </div>
+      
+      <div class="articles">
+        {{ content }}
+      </div>
+      
+      <div class="contents-foolter">
+        <nav class="footer-navigation">
+          {% if paginator.previous_page %}
+            {% if paginator.previous_page == 1 %}
+              <a href="{{ site.baseurl }}" class="btn">Previous</a>
+            {% else %}
+              <a href="{{ site.baseurl }}/page{{ paginator.previous_page }}" class="btn">Previous</a>
+            {% endif %}
+          {% else %}
+            Previous
+          {% endif %}
+          <ul class="inline-list">
+            <!--<li>
+              {% if paginator.page == 1 %}
+                <span class="current-page">1</span>
+              {% else %}
+                <a href="{{ site.baseurl }}">1</a>
+              {% endif %}
+            </li>-->
+            {% for count in (1..paginator.total_pages) %}
+              {% if count == 1 %}
+              
+              {% else %}
+              <li>
+                {% if count == paginator.page %}
+                  <span class="current-page">{{ count }}</span>
+                {% else %}
+                  <a href="{{ site.baseurl }}/page{{ count }}">{{ count }}</a>
+                {% endif %}
+              </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          {% if paginator.next_page %}
+            <a href="{{ site.baseurl }}/page{{ paginator.next_page }}" class="btn">Next</a>
+          {% else %}
+            Next
+          {% endif %}
+        </nav>
+      </div>
     </main>
     
     <!-- Page Footer -->
