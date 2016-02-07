@@ -2,31 +2,35 @@
     padding:            0;
     margin:             0;
     color:              #6A6A6A;
+    font-family:        Lato, Calibri, Arial, sans-serif;
 }
 
 
 body {
     background-color:   #ECECEC;
-    margin:             0;
 }
 
 
 header {
     background-color:   white;
     width:              100%;
-    padding:            10px 0;
+    padding:            0;
     position:           fixed;
     top:                0;
-    left:               0;
-    box-shadow:         0 0 15px 0 #444;
+    box-shadow:         0 0 15px 0 #ccc;
+    z-index:            50;
 }
 
 
 .header-wrapper {
-    max-width:          900px;
+    max-width:          850px;
     margin:             0 auto;
-    padding:            0;
-    border:             0;
+    padding:            0 10px;
+}
+
+
+.header-entry {
+    line-height:        60px;
 }
 
 
@@ -36,7 +40,7 @@ a {
 }
 
 
-.hyperlink {
+.face-transition {
     -webkit-transition: all 0.3s ease-out;
     -moz-transition:    all 0.3s ease-out;
     -ms-transition:     all 0.3s ease-out;
@@ -46,28 +50,28 @@ a {
 
 
 .logo-image {
-    margin:             auto 0;
-    float:              left;
+    margin-top:         10px;
+    vertical-align:     top;
 }
 
 
 .logo-title {
-    font-family:        Calibri,Arial,sans-serif;
-    font-size:          2em;
+    font-size:          1.6em;
     font-weight:        bold;
     display:            inline-block;
-    line-height:        48px;
     margin-left:        10px;
+    line-height:        68px;
 }
 
 a:hover .logo-title {
-    color:              #2E2E2E;
+    color:              #2B2B2B;
     text-shadow:        0 0 1px #6C6C6C;
 }
 
 
 .header-navigation {
     float:              right;
+    font-size:          1.17em;
 }
 
 
@@ -81,8 +85,23 @@ a:hover .logo-title {
 .menu-entry {
     float:              right;
     display:            inline-block;
-    line-height:        48px;
-    margin-left:        20px;
+    padding:            0 20px;
+    font-weight:        bold;
+    border-top:         5px solid transparent;
+    border-bottom:      5px solid transparent;
+    line-height:        62px;
+    box-sizing:         border-box;
+}
+
+
+.menu-entry:hover {
+    border-top:         5px solid #FF7E7E;
+}
+
+
+.menu-entry:hover a {
+    color:              #2B2B2B;
+    text-shadow:        0 0 1px #6C6C6C;
 }
 
 
@@ -90,15 +109,37 @@ a:hover .logo-title {
 /* Content body */
 .contents-header {
     background-color:   #2E2E2E;
-    height:             250px;
+    height:             300px;
+    position:           relative;
+}
+
+
+.contents-header-wrapper {
+    width:              100%;
+    text-align:         center;
+    position:           absolute;
+    bottom:             0;
+}
+
+
+.contents-header-wrapper h1 {
+    color:              white;
+    font-size:          2.5em;
+    margin:             30px 0 10px;
+}
+
+
+.contents-header-wrapper p {
+    color:              white;
+    font-size:          1.2em;
+    margin-bottom:      30px;
 }
 
 
 .articles {
     max-width:          800px;
     padding:            0 10px 20px;
-    margin:             0 auto;
-    border: 0;
+    margin:             50px auto 0;
 }
 
 
@@ -106,7 +147,7 @@ article {
     background-color:   white;
     margin:             30px auto 0;
     padding:            50px 80px;
-    box-shadow:         0 0 10px 3px #ccc;
+    box-shadow:         0 0 10px #ccc;
 }
 
 
@@ -124,19 +165,18 @@ footer {
 .contents-footer {
     margin:             40px auto 50px;
     text-align:         center;
-    font-weight:        bold;
 }
 
 
 .pagination {
-    padding:            0 20px;
+    padding:            0 10px;
     cursor:             default;
 }
 
 
 .button {
-    background-color:   #2E2E2E;
-    color:              white;
+    background-color:   rgba(255,255,255,0);
+    color:              #2E2E2E;
     border-radius:      5px;
     padding:            8px 20px;
     border:             2px solid #2E2E2E;
@@ -144,15 +184,14 @@ footer {
 
 
 a.button:hover {
-    background-color:   rgba(255,255,255,0);
-    color:              #2E2E2E;
+    background-color:   #2E2E2E;
+    color:              #ECECEC;
 }
 
 
 .disable {
-    background-color:   #ACACAC;
-    color:              #ECECEC;
-    border:             2px solid #ACACAC;
+    color:              #ACACAC;
+    border:             0;
     cursor:             default;
 }
 

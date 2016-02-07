@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="technical memoizer" />
-    <link rel="stylesheet" href="{{ "/assets/vendor/font-awesome/css/font-awesome.css" | prepend: site.baseurl }}" />
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext">
+    <link rel="stylesheet" type="text/css" href="{{ "/assets/vendor/font-awesome/css/font-awesome.css" | prepend: site.baseurl }}" />
+    <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | prepend: site.baseurl }}" />
     <title>{{ site.title }}</title>
   </head>
   
@@ -16,15 +17,15 @@
       <div class="header-wrapper">
         <a href="/">
           <img class="logo-image" src="/images/logo.png"/>
-          <span class="logo-title hyperlink">{{ site.title }}</span>
+          <span class="logo-title fade-transition">{{ site.title }}</span>
         </a>
         
         <nav class="header-navigation">
           <ul>
-            <il class="menu-entry"><a href="/">Home</a></li>
-            <li class="menu-entry"><a href="/about">About</a></li>
-            <li class="menu-entry"><a href="/categories">Categories</a></li>
-            <li class="menu-entry"><a href="/tags">Tags</a></li>
+            <li class="menu-entry fade-transition"><a href="/about" class="face-transition">About</a></li>
+            <li class="menu-entry fade-transition"><a href="/tags" class="face-transition">Tags</a></li>
+            <li class="menu-entry fade-transition"><a href="/categories" class="face-transition">Categories</a></li>
+            <li class="menu-entry fade-transition"><a href="/" class="face-transition">Home</a></li>
           </ul>
         </nav>
       </div>
@@ -37,6 +38,10 @@
     <main>
       <!-- Content Headser -->
       <div class="contents-header">
+        <div class="contents-header-wrapper">
+          <h1>How did I do that?</h1>
+          <p>I have to memoize what I did...</p>
+        </div>
       </div>
       
       <!-- Articles -->
@@ -48,16 +53,16 @@
       <div class="contents-footer">
         {% if paginator.previous_page %}
           {% if paginator.previous_page == 1 %}
-            <a href="/" class="button hyperlink">&lt;&lt; Previous</a>
+            <a href="/" class="button fade-transition">&lt;&lt; Previous</a>
           {% else %}
-            <a href="/page{{ paginator.previous_page }}" class="button hyperlink">&lt;&lt; Previous</a>
+            <a href="/page{{ paginator.previous_page }}" class="button fade-transition">&lt;&lt; Previous</a>
           {% endif %}
         {% else %}
           <span class="button disable">&lt;&lt; Previous</span>
         {% endif %}
         <span class="pagination">Page {{ paginator.page }} /{{ paginator.total_pages }}</span>
         {% if paginator.next_page %}
-          <a href="/page{{ paginator.next_page }}" class="button hyperlink">Next &gt;&gt;</a>
+          <a href="/page{{ paginator.next_page }}" class="button fade-transition">Next &gt;&gt;</a>
         {% else %}
           <span class="button disable">Next &gt;&gt;</span>
         {% endif %}
