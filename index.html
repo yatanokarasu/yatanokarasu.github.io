@@ -6,7 +6,7 @@ title: Blogs
 
 {% for post in paginator.posts %}
 <article>
-  <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+  <a href="{{ post.url | prepend: site.baseurl }}"><h2 class="post-title hyperlink">{{ post.title }}</h2></a>
   {% assign readtime = post.content | number_of_words | divided_by:site.words_per_minute %}
   <h3>Reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}</h3>
   <h4>{{ post.date | date: "%d %B %Y" }}</h4>

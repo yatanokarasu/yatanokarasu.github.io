@@ -1,6 +1,7 @@
 
 # Site title
 title: Memoizer
+baseurl: ""
 
 words_per_minute: 200
 
@@ -11,7 +12,7 @@ author:
 # Build settings
 markdown: kramdown
 
-paginate:   2
+paginate:   5
 
 gems:
     - jekyll-paginate

@@ -13,21 +13,21 @@
   <body>
     <!-- Page Header -->
     <header>
-      <!--<div class="header-menu">
-        <a href="/" class="logo"><h2>{{ site.title }}</h2></a>
-        <nav>
-          <ul class="menu">
-            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
-            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Categories</a></li>
-            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Tags</a></li>
-            <li class="menu_entry"><a href="{{ '/' | prepend: site.baseurl }}">Archives</a></li>
+      <div class="header-wrapper">
+        <a href="/">
+          <img class="logo-image" src="/images/logo.png"/>
+          <span class="logo-title hyperlink">{{ site.title }}</span>
+        </a>
+        
+        <nav class="header-navigation">
+          <ul>
+            <il class="menu-entry"><a href="/">Home</a></li>
+            <li class="menu-entry"><a href="/about">About</a></li>
+            <li class="menu-entry"><a href="/categories">Categories</a></li>
+            <li class="menu-entry"><a href="/tags">Tags</a></li>
           </ul>
         </nav>
       </div>
-      
-      <div class="header-title">
-      </div>-->
-      
       <!--<ul class="social-links">
         <li><a href="https://github.com/{{ site.author.github }}" class="social-links-entry" target="_blank"><i class="fa fa-github"></i></a></li>
       </ul>-->
@@ -35,52 +35,32 @@
     
     <!-- Main -->
     <main>
+      <!-- Content Headser -->
       <div class="contents-header">
       </div>
       
+      <!-- Articles -->
       <div class="articles">
         {{ content }}
       </div>
       
-      <div class="contents-foolter">
-        <nav class="footer-navigation">
-          {% if paginator.previous_page %}
-            {% if paginator.previous_page == 1 %}
-              <a href="{{ site.baseurl }}" class="btn">Previous</a>
-            {% else %}
-              <a href="{{ site.baseurl }}/page{{ paginator.previous_page }}" class="btn">Previous</a>
-            {% endif %}
+      <!-- Pagi Navigation -->
+      <div class="contents-footer">
+        {% if paginator.previous_page %}
+          {% if paginator.previous_page == 1 %}
+            <a href="/" class="button hyperlink">&lt;&lt; Previous</a>
           {% else %}
-            Previous
+            <a href="/page{{ paginator.previous_page }}" class="button hyperlink">&lt;&lt; Previous</a>
           {% endif %}
-          <ul class="inline-list">
-            <!--<li>
-              {% if paginator.page == 1 %}
-                <span class="current-page">1</span>
-              {% else %}
-                <a href="{{ site.baseurl }}">1</a>
-              {% endif %}
-            </li>-->
-            {% for count in (1..paginator.total_pages) %}
-              {% if count == 1 %}
-              
-              {% else %}
-              <li>
-                {% if count == paginator.page %}
-                  <span class="current-page">{{ count }}</span>
-                {% else %}
-                  <a href="{{ site.baseurl }}/page{{ count }}">{{ count }}</a>
-                {% endif %}
-              </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-          {% if paginator.next_page %}
-            <a href="{{ site.baseurl }}/page{{ paginator.next_page }}" class="btn">Next</a>
-          {% else %}
-            Next
-          {% endif %}
-        </nav>
+        {% else %}
+          <span class="button disable">&lt;&lt; Previous</span>
+        {% endif %}
+        <span class="pagination">Page {{ paginator.page }} /{{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+          <a href="/page{{ paginator.next_page }}" class="button hyperlink">Next &gt;&gt;</a>
+        {% else %}
+          <span class="button disable">Next &gt;&gt;</span>
+        {% endif %}
       </div>
     </main>
     
