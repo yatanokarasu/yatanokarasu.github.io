@@ -3,14 +3,16 @@ layout: default
 title: Blogs
 ---
 
-
+<!-- Post teasers -->
 {% for post in paginator.posts %}
 <article>
   <a href="{{ post.url | prepend: site.baseurl }}"><h2 class="post-title fade-transition">{{ post.title }}</h2></a>
   {% assign readtime = post.content | number_of_words | divided_by:site.words_per_minute %}
   <h3>Reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}</h3>
   <h4>{{ post.date | date: "%d %B %Y" }}</h4>
-</a>
-</li>
 </article>
 {% endfor %}
+
+
+<!-- Pagi Navigation -->
+{% include page-navigation.html %}
