@@ -8,7 +8,7 @@
   {% else %}
     <span class="button disable">&lt;&lt; Previous</span>
   {% endif %}
-  <span class="pagination">Page {{ paginator.page }} /{{ paginator.total_pages }}</span>
+  <span class="pagination">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
   {% if paginator.next_page %}
     <a href="/page{{ paginator.next_page }}" class="button fade-transition">Next &gt;&gt;</a>
   {% else %}

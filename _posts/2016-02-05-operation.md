@@ -21,6 +21,8 @@ This is test post.
 This is test post.
 This is test post.
 This is test post.
+
+<!-- more -->
 This is test post.
 This is test post.
 This is test post.

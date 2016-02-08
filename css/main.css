@@ -1,8 +1,16 @@
-* {
+html,
+body,
+div {
     padding:            0;
     margin:             0;
     color:              #6A6A6A;
     font-family:        Lato, Calibri, Arial, sans-serif;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
 }
 
 
@@ -11,7 +19,19 @@ body {
 }
 
 
-header {
+@media (min-width: 700px) {
+    h1 {
+        font-size:      1.75rem;
+    }
+}
+
+
+h1 {
+    font-size:          2rem;
+}
+
+
+.page-header {
     background-color:   white;
     width:              100%;
     padding:            0;
@@ -59,7 +79,7 @@ a {
     font-size:          1.6em;
     font-weight:        bold;
     display:            inline-block;
-    line-height:        68px;
+    line-height:        70px;
 }
 
 a:hover .logo-title {
@@ -72,6 +92,12 @@ a:hover .logo-title {
     float:              right;
     font-size:          1.17em;
 }
+@media (max-width: 700px) {
+    .header-navigation {
+        display: none;
+    }
+}
+
 
 
 .header-navigation ul {
@@ -81,24 +107,27 @@ a:hover .logo-title {
 }
 
 
-.menu-entry {
+.menu-list {
     float:              right;
-    display:            inline-block;
-    padding:            0 20px;
-    font-weight:        bold;
     border-top:         5px solid transparent;
     border-bottom:      5px solid transparent;
-    line-height:        62px;
-    box-sizing:         border-box;
 }
 
 
-.menu-entry:hover {
+.menu-entry {
+    display:            inline-block;
+    padding:            0 20px;
+    font-weight:        bold;
+    line-height:        60px;
+}
+
+
+.menu-list:hover {
     border-top:         5px solid #FF7E7E;
 }
 
 
-.menu-entry:hover a {
+.menu-entry:hover {
     color:              #2B2B2B;
     text-shadow:        0 0 1px #6C6C6C;
 }
@@ -108,7 +137,7 @@ a:hover .logo-title {
 /* Content body */
 .contents-header {
     background-color:   #2E2E2E;
-    height:             300px;
+    height:             250px;
     position:           relative;
 }
 
@@ -144,15 +173,27 @@ a:hover .logo-title {
 
 article {
     background-color:   white;
-    margin:             30px auto 0;
+    margin-top:         30px;
     padding:            50px 80px;
     box-shadow:         0 0 10px #ccc;
+    border-radius:      3px;
+}
+
+@media (max-width: 700px) {
+    article {
+        padding:        30px 20px;
+    }
+}
+
+
+.article-contents {
+    padding-bottom:     20px;
 }
 
 
 footer {
     background-color:   #2E2E2E;
-    height:             250px;
+    height:             150px;
 }
 
 
@@ -162,7 +203,7 @@ footer {
 
 
 .contents-footer {
-    margin:             40px auto 50px;
+    margin:             50px auto 50px;
     text-align:         center;
 }
 
@@ -195,7 +236,26 @@ a.button:hover {
 }
 
 
-a:hover .post-title {
+.article-meta-data {
+    color:              #ACACAC;
+    font-size:          .75rem;
+    text-transform:     uppercase;
+    vertical-align:     top;
+}
+
+.estimate-reading-time {
+    float:              right;
+}
+
+
+.article-title:hover {
     color:              #2E2E2E;
     text-shadow:        0 0 1px #6C6C6C;
+}
+
+
+address {
+    text-align:         center;
+    font-style:         normal;
+    padding:            30px;
 }
