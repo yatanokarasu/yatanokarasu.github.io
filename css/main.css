@@ -186,11 +186,6 @@ article {
 }
 
 
-.article-contents {
-    padding-bottom:     20px;
-}
-
-
 footer {
     background-color:   #2E2E2E;
     height:             150px;
@@ -246,7 +241,11 @@ a.button:hover {
 .estimate-reading-time {
     float:              right;
 }
-
+@media (max-width: 450px) {
+    .estimate-reading-time {
+        display:        none;
+    }
+}
 
 .article-title:hover {
     color:              #2E2E2E;
