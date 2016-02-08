@@ -40,7 +40,7 @@ a {
 }
 
 
-.face-transition {
+.fade-transition {
     -webkit-transition: all 0.3s ease-out;
     -moz-transition:    all 0.3s ease-out;
     -ms-transition:     all 0.3s ease-out;
@@ -59,7 +59,6 @@ a {
     font-size:          1.6em;
     font-weight:        bold;
     display:            inline-block;
-    margin-left:        10px;
     line-height:        68px;
 }
 
