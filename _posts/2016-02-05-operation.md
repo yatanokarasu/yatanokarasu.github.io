@@ -6,8 +6,6 @@ date: 2016-02-05 12:00:00
 categories: [operation]
 ---
 
-# What is this?
-
 This is test post.
 This is test post.
 This is test post.
