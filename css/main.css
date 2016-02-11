@@ -45,7 +45,7 @@ h1 {
     padding:            0;
     position:           fixed;
     top:                0;
-    box-shadow:         0 0 15px 0 #ccc;
+    box-shadow:         0 0 15px 0 #CCCCCC;
     z-index:            50;
 }
 
@@ -156,14 +156,11 @@ a {
 
 
 .toggle-menu-wrapper {
+    position:       absolute;
+    top:            0;
+    right:          10px;
     height:         70px;
-    margin-right:   10px;
-    float:          right;
-    display:        -webkit-flex;
-    display:        -moz-flex;
-    display:        -ms-flex;
-    display:        -o-flex;
-    display:        flex;
+    display:        block;
 }
 @media (min-width: 700px) {
     .toggle-menu-wrapper {
@@ -172,7 +169,7 @@ a {
 }
 
 
-.toggle-menu > input {
+#toggle-menu-state {
     display: none;
 }
 
@@ -193,8 +190,8 @@ a {
     background-color:       black;
 }
 
-/*.toggle-menu a:before,
-.toggle-menu a:after
+.toggle-menu span:before,
+.toggle-menu span:after
 {
     content:                "";
     display:                block;
@@ -206,21 +203,19 @@ a {
     background-color:       white;
 }
 
-.toggle-menu a:before {
+.toggle-menu span:before {
     margin-top:             -6px;
 }
-.toggle-menu a:after {
+.toggle-menu span:after {
     margin-top:             2px;
-}*/
+}
 
 
-/* 非チェック時の.menu-list */
-#menu-toggle-checkbox:not(:checked) ~ .header-navigation {
+#toggle-menu-state:not(:checked) ~ .header-navigation {
   height: 0;
 }
 
-/* チェック時の.menu-list */
-#menu-toggle-checkbox:checked ~ .header-navigation {
+#toggle-menu-state:checked ~ .header-navigation {
   height: 12em;
 }
 
