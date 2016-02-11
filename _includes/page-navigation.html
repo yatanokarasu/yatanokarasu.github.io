@@ -1,17 +1,17 @@
 <div class="contents-footer">
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-      <a href="/" class="button fade-transition">&lt;&lt; Previous</a>
+      <a href="/" class="button previous fade-transition">Previous</a>
     {% else %}
-      <a href="/page{{ paginator.previous_page }}" class="button fade-transition">&lt;&lt; Previous</a>
+      <a href="/page{{ paginator.previous_page }}" class="button previous fade-transition">Previous</a>
     {% endif %}
   {% else %}
-    <span class="button disable">&lt;&lt; Previous</span>
+    <span class="button previous disable">Previous</span>
   {% endif %}
   <span class="pagination">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
   {% if paginator.next_page %}
-    <a href="/page{{ paginator.next_page }}" class="button fade-transition">Next &gt;&gt;</a>
+    <a href="/page{{ paginator.next_page }}" class="button next fade-transition">Next</a>
   {% else %}
-    <span class="button disable">Next &gt;&gt;</span>
+    <span class="button next disable">Next</span>
   {% endif %}
 </div>

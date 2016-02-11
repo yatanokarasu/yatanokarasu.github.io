@@ -1,26 +1,22 @@
 <header class="page-header">
   <div class="header-wrapper">
-    <a href="/">
+    <a class="logo" href="/">
       <img class="logo-image" src="/images/logo.png"/>
       <span class="logo-title fade-transition">{{ site.title }}</span>
     </a>
     
+    <div class="toggle-menu-wrapper">
+      <label class="toggle-menu"><a href="#"></a><input id="menu-toggle-checkbox" type="checkbox" autocomplete="off" /></label>
+    </div>
+    
     <nav class="header-navigation">
       <ul>
-        <li class ="menu-list fade-transition"><a class ="menu-entry fade-transition" href="/about">About</a></li>
-        <li class ="menu-list fade-transition"><a class ="menu-entry fade-transition" href="/tags">Tags</a></li>
-        <li class ="menu-list fade-transition"><a class ="menu-entry fade-transition" href="/categories">Categories</a></li>
         <li class ="menu-list fade-transition"><a class ="menu-entry fade-transition" href="/">Home</a></li>
+        <li class ="menu-list fade-transition"><a class ="menu-entry fade-transition" href="/categories">Categories</a></li>
+        <li class ="menu-list fade-transition"><a class ="menu-entry fade-transition" href="/tags">Tags</a></li>
+        <li class ="menu-list fade-transition"><a class ="menu-entry fade-transition" href="/about">About</a></li>
       </ul>
     </nav>
-    
-    <div class="toggle-menu-wrapper">
-      <div class="toggle-menu fade-transition">
-       <div class="bar fade-transition"></div>
-       <div class="bar fade-transition"></div>
-       <div class="bar fade-transition"></div>
-      </div>
-    </div>
   </div>
   <!--<ul class="social-links">
     <li><a href="https://github.com/{{ site.author.github }}" class="social-links-entry" target="_blank"><i class="fa fa-github"></i></a></li>

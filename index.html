@@ -10,7 +10,7 @@ title: Blogs
     {% assign readtime = post.content | number_of_words | divided_by:site.words_per_minute %}
     <div>
       <span class="article-meta-data posted-date">{{ post.date | date: "%d %B %Y" }}</span>
-      <span class="article-meta-data estimate-reading-time">Estimate reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}</span>
+      <span class="article-meta-data estimate-reading-time"><i class="fa fa-clock-o"></i> Estimate reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}</span>
     </div>
     <h1><a class="article-title fade-transition" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
   </header>

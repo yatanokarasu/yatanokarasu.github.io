@@ -7,12 +7,16 @@ words_per_minute: 200
 
 # Authors
 author:
-    github:     yatanokarasu
+  name: yatanokarasu
 
 # Build settings
 markdown: kramdown
 
-paginate:   5
+paginate: 5
 
 gems:
-    - jekyll-paginate
+  - jekyll-paginate
+
+exclude:
+  - README.md
+  - LICENSE

@@ -22,16 +22,26 @@ body {
 h1 {
     font-size:          2rem;
 }
-@media (max-width: 700px) {
+@media (max-width: 699px) {
     h1 {
         font-size:      1.75rem;
     }
 }
 
 
+.fade-transition {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition:    all 0.3s ease-out;
+    -ms-transition:     all 0.3s ease-out;
+    -o-transition:      all 0.3s ease-out;
+    transition:         all 0.3s ease-out;
+}
+
+
 .page-header {
     background-color:   white;
     width:              100%;
+    height:             70px;
     padding:            0;
     position:           fixed;
     top:                0;
@@ -43,12 +53,8 @@ h1 {
 .header-wrapper {
     max-width:          850px;
     margin:             0 auto;
-    padding:            0 10px;
-}
-
-
-.header-entry {
-    line-height:        60px;
+    padding:            0;
+    position:           relative;
 }
 
 
@@ -58,12 +64,9 @@ a {
 }
 
 
-.fade-transition {
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition:    all 0.3s ease-out;
-    -ms-transition:     all 0.3s ease-out;
-    -o-transition:      all 0.3s ease-out;
-    transition:         all 0.3s ease-out;
+.logo {
+    margin-left:        10px;
+    display:            inline-block;
 }
 
 
@@ -80,90 +83,145 @@ a {
     line-height:        70px;
 }
 
-a:hover .logo-title {
+.logo:hover {
     color:              #2B2B2B;
     text-shadow:        0 0 1px #6C6C6C;
 }
 
-
-.header-navigation {
-    float:              right;
-    font-size:          1.17em;
-}
-@media (max-width: 700px) {
-    .header-navigation {
-        display: none;
-    }
-}
-
-
-
 .header-navigation ul {
-    height:             100%;
     margin:             0;
-    list-style-type:    none;
+    padding:            0;
 }
 
 
 .menu-list {
-    float:              right;
-    border-top:         5px solid transparent;
-    border-bottom:      5px solid transparent;
+    margin:             0;
+    padding:            0;
+    font-size:          1.17em;
+    list-style:         none;
+}
+@media (min-width: 700px) {
+    .menu-list {
+        float:              left;
+    }
 }
 
 
-.menu-entry {
-    display:            inline-block;
-    padding:            0 20px;
-    font-weight:        bold;
-    line-height:        60px;
+@media (max-width: 699px) {
+    .menu-entry {
+        padding-top:        12px;
+        padding-bottom:     12px;
+        background-color:   #3C3C3C;
+        color:              #AAAAAA;
+        display:            block;
+        text-align:         center;
+        border-bottom:      1px solid #666666;
+    }
+    .menu-entry:hover {
+        color:              white;
+        text-shadow:        0 0 1px #ACACAC;
+        background-color:   #6A6A6A;
+    }
+    .header-navigation {
+        height:             0;
+        overflow:           hidden;
+    }
+}
+@media (min-width: 700px) {
+    .menu-entry {
+        display:            table-cell;
+        padding-right:      20px;
+        padding-left:       20px;
+        font-weight:        bold;
+        height:             70px;
+        border-top:         5px solid transparent;
+        border-bottom:      5px solid transparent;
+        vertical-align:     middle;
+        box-sizing:         border-box;
+    }
+    .menu-entry:hover {
+        border-top-color:   #FF7E7E;
+        color:              #2B2B2B;
+        text-shadow:        0 0 1px #6C6C6C;
+    }
 }
 
 
-.menu-list:hover {
-    border-top:         5px solid #FF7E7E;
+@media (min-width: 700px) {
+    .header-navigation {
+        padding-right:      10px;
+        float:              right;
+    }
 }
 
 
-.menu-entry:hover {
-    color:              #2B2B2B;
-    text-shadow:        0 0 1px #6C6C6C;
+.toggle-menu-wrapper {
+    height:         70px;
+    margin-right:   10px;
+    float:          right;
+    display:        -webkit-flex;
+    display:        -moz-flex;
+    display:        -ms-flex;
+    display:        -o-flex;
+    display:        flex;
 }
-
-
-@media (max-width: 700px) {
+@media (min-width: 700px) {
     .toggle-menu-wrapper {
-        height:         70px;
-        float:          right;
-        display:        -webkit-flex;
-        display:        -moz-flex;
-        display:        -ms-flex;
-        display:        -o-flex;
-        display:        flex;
+        display:            none;
     }
-    .toggle-menu {
-        width:            30px;
-        height:           30px;
-        margin:           auto 0;
-        background-color: rgba(255, 255, 255, 0);
-        padding:          5px 4px;
-        border:           2px solid #2E2E2E;
-        border-radius:    6px;
-    }
-    .toggle-menu:hover {
-        background-color: #2E2E2E;
-    }
-    .toggle-menu:hover .bar {
-        background-color: #ECECEC;
-    }
+}
 
-    .bar {
-        height:           3px;
-        width:            18px;
-        margin-bottom:    3px;
-        background-color: #2E2E2E;
-        border-radius:    3px;
-    }
+
+.toggle-menu > input {
+    display: none;
+}
+
+
+.toggle-menu {
+    cursor:                 pointer;
+}
+
+.toggle-menu:before {
+    content:                "";
+    display:                block;
+    position:               absolute;
+    top:                    50%;
+    margin-top:             -10px;
+    right:                  10px;
+    height:                 20px;
+    width:                  20px;
+    background-color:       black;
+}
+
+/*.toggle-menu a:before,
+.toggle-menu a:after
+{
+    content:                "";
+    display:                block;
+    position:               absolute;
+    top:                    50%;
+    right:                  10px;
+    height:                 4px;
+    width:                  20px;
+    background-color:       white;
+}
+
+.toggle-menu a:before {
+    margin-top:             -6px;
+}
+.toggle-menu a:after {
+    margin-top:             2px;
+}*/
+
+
+/* 非チェック時の.menu-list */
+#menu-toggle-checkbox:not(:checked) ~ .header-navigation {
+  height: 0;
+}
+
+/* チェック時の.menu-list */
+#menu-toggle-checkbox:checked ~ .header-navigation {
+  height: 12em;
 }
 
 
@@ -181,18 +239,16 @@ a:hover .logo-title {
     text-align:         center;
     position:           absolute;
     bottom:             0;
+    color:              white;
 }
 
 
 .contents-header-wrapper h1 {
-    color:              white;
-    /*font-size:          2.5em;*/
     margin:             30px 0 10px;
 }
 
 
 .contents-header-wrapper p {
-    color:              white;
     font-size:          1.2em;
     margin-bottom:      30px;
 }
@@ -213,7 +269,7 @@ article {
     border-radius:      3px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 699px) {
     article {
         padding:        30px 20px;
     }
@@ -239,18 +295,46 @@ footer {
 
 .pagination {
     display:            inline-block;
-    margin:             10px 10px;
-    cursor:             default;
+    padding:            10px 10px;
+    margin:             10px auto;
 }
 
 
 .button {
+    display:            inline-block;
     background-color:   rgba(255,255,255,0);
     color:              #2E2E2E;
     border-radius:      5px;
     margin:             10px auto;
     padding:            8px 20px;
     border:             2px solid #2E2E2E;
+}
+@media (max-width: 360px) {
+    .button {
+        display:            inline-block;
+        background-color:   rgba(255,255,255,0);
+        color:              #2E2E2E;
+        border-radius:      5px;
+        margin:             10px auto;
+        padding:            6px 12px;
+        border:             2px solid #2E2E2E;
+    }
+}
+
+
+.previous:before {
+    content:            "<< ";
+}
+.next:after {
+    content:            " >>";
+}
+@media (max-width: 420px) {
+    .previous:before {
+        content:            "";
+    }
+    .next:after {
+        content:            "";
+    }
 }
 
 
