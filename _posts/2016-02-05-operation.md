@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "運用設計"
 subtitle: "面倒"
 date: 2016-02-05 12:00:00
