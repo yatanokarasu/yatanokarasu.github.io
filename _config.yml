@@ -19,4 +19,3 @@ gems:
 
 exclude:
   - README.md
-  - LICENSE

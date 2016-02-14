@@ -55,6 +55,57 @@ h1 {
 }
 
 
+.button {
+    display:            inline-block;
+    background-color:   rgba(255,255,255,0);
+    color:              #2E2E2E;
+    border-radius:      5px;
+    margin:             10px auto;
+    padding:            8px 20px;
+    border:             2px solid #2E2E2E;
+}
+@media (max-width: 360px) {
+    .button {
+        display:            inline-block;
+        background-color:   rgba(255,255,255,0);
+        color:              #2E2E2E;
+        border-radius:      5px;
+        margin:             10px auto;
+        padding:            6px 12px;
+        border:             2px solid #2E2E2E;
+    }
+}
+
+
+.disable {
+    color:              #ACACAC;
+    border:             2px solid #ACACAC;
+    cursor:             default;
+}
+
+
+.previous:before {
+    content:            "<< ";
+}
+.next:after {
+    content:            " >>";
+}
+@media (max-width: 420px) {
+    .previous:before {
+        content:            "";
+    }
+    .next:after {
+        content:            "";
+    }
+}
+
+
+a.button:hover {
+    background-color:   #2E2E2E;
+    color:              #ECECEC;
+}
+
+
 .page-header {
     background-color:   white;
     width:              100%;
@@ -123,8 +174,8 @@ a {
         top:                0;
         right:              -200px;
         
-        background-color:   white;
-        box-shadow:         0 0 10px 0 #CCCCCC;
+        background-color:   #2E2E2E;
+        box-shadow:         0 0 10px 0 #666666;
     }
     .header-navigation ul {
         margin-top:         70px;
@@ -135,14 +186,14 @@ a {
         padding-bottom:     20px;
         padding-left:       30px;
         width:              150px;
-        color:              #666666;
+        color:              #BABABA;
         font-weight:        bold;
         border-left:        6px solid transparent;
     }
     .menu-entry:hover {
         border-left-color:  #EE7E7E;
-        color:              #2B2B2B;
-        text-shadow:        0 0 1px #6C6C6C;
+        color:              white;
+        text-shadow:        0 0 1px #DADADA;
     }
 }
 @media (min-width: 700px) {
@@ -211,7 +262,7 @@ a {
     right:                  10px;
     height:                 20px;
     width:                  35px;
-    background-color:       #666666;
+    background-color:       #2E2E2E;
     transition: all 0.3s ease-out;
 }
 
@@ -254,7 +305,7 @@ a {
 }
 #toggle-menu-state:checked ~ .toggle-menu-wrapper .toggle-menu span:before,
 #toggle-menu-state:checked ~ .toggle-menu-wrapper .toggle-menu span:after {
-    background-color:       #666666;
+    background-color:       white;
     margin-top:             -2px;
     border-radius:          5px;
 }
@@ -316,12 +367,6 @@ article {
 }
 
 
-footer {
-    background-color:   #2E2E2E;
-    height:             150px;
-}
-
-
 .footer-navigation {
     margin:             0 auto;
 }
@@ -337,57 +382,6 @@ footer {
     display:            inline-block;
     padding:            10px 10px;
     margin:             10px auto;
-}
-
-
-.button {
-    display:            inline-block;
-    background-color:   rgba(255,255,255,0);
-    color:              #2E2E2E;
-    border-radius:      5px;
-    margin:             10px auto;
-    padding:            8px 20px;
-    border:             2px solid #2E2E2E;
-}
-@media (max-width: 360px) {
-    .button {
-        display:            inline-block;
-        background-color:   rgba(255,255,255,0);
-        color:              #2E2E2E;
-        border-radius:      5px;
-        margin:             10px auto;
-        padding:            6px 12px;
-        border:             2px solid #2E2E2E;
-    }
-}
-
-
-.previous:before {
-    content:            "<< ";
-}
-.next:after {
-    content:            " >>";
-}
-@media (max-width: 420px) {
-    .previous:before {
-        content:            "";
-    }
-    .next:after {
-        content:            "";
-    }
-}
-
-
-a.button:hover {
-    background-color:   #2E2E2E;
-    color:              #ECECEC;
-}
-
-
-.disable {
-    color:              #ACACAC;
-    border:             2px solid #ACACAC;
-    cursor:             default;
 }
 
 
@@ -413,8 +407,26 @@ a.button:hover {
 }
 
 
-address {
+footer {
+    color:              #808080;
+    background-color:   #2E2E2E;
+    min-height:         150px;
     text-align:         center;
+}
+
+footer a {
+    color:              #CCCCCC;
+}
+footer a:hover {
+    color:              #ECECEC;
+}
+
+footer p {
+    margin:             5px 10px;
+}
+
+
+address {
     font-style:         normal;
-    padding:            30px;
+    padding:            30px 10px 10px;
 }
