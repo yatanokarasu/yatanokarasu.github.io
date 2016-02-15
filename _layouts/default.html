@@ -16,7 +16,6 @@
             <h2><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></h2>
           {% else %}
             <h2>{{ page.subtitle }}</h2>
-            <h3>Heading</h3>
           {% endif %}
           
           {% if page.layout == 'post' %}
