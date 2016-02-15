@@ -12,7 +12,17 @@
       <div class="contents-header">
         <div class="contents-header-wrapper">
           <h1>{{ page.title }}</h1>
-          <p>{{ page.subtitle }}</p>
+          {% if page.date %}
+            <h2><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></h2>
+          {% else %}
+            <h2>{{ page.subtitle }}</h2>
+            <h3>Heading</h3>
+          {% endif %}
+          
+          {% if page.layout == 'post' %}
+            {% assign readtime = page.content | number_of_words | divided_by:site.words_per_minute %}
+            <p class="estimate-reading-time"><i class="fa fa-clock-o"></i> Estimate reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}</p>
+          {% endif %}
         </div>
       </div>
       
@@ -26,7 +36,5 @@
     {% include footer.html %}
     
     <!-- Script Loading -->
-    <script src="{{ "/assets/vendor/highlight/highlight.pack.js" | prepend: site.baseurl }}"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

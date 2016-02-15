@@ -3,23 +3,24 @@ layout: default
 ---
 
 <!-- Post teasers -->
-{% for post in paginator.posts %}
 <article>
   <header>
-    {% assign readtime = post.content | number_of_words | divided_by:site.words_per_minute %}
-    <div>
-      <span class="article-meta-data posted-date">{{ post.date | date: "%d %B %Y" }}</span>
-      <span class="article-meta-data estimate-reading-time"><i class="fa fa-clock-o"></i> Estimate reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}</span>
-    </div>
-    <h1><a class="article-title fade-transition" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+    <h1>{{ page.title }}</h1>
   </header>
   <section class="article-contents">
-    {% if post.content contains"<!-- more -->" %}
-      {{ post.content | split:"<!-- more -->" | first % }}
-    {% else %}
-      {{ post.content }}
-    {% endif %}
+    {{ page.content }}
   </section>
-  {% if post.content contains"<!-- more -->" %}{% include read-more.html %}{% endif %}
 </article>
-{% endfor %}
+
+<div class="contents-footer">
+  {% if page.previous %}
+    <a href="{{ page.previous.url }}" class="button previous fade-transition">Previous Post</a>
+  {% else %}
+    <span class="button previous disable">Previous Post</span>
+  {% endif %}
+  {% if page.next %}
+    <a href="{{ page.next.url }}" class="button next fade-transition">Next Post</a>
+  {% else %}
+    <span class="button next disable">Next Post</span>
+  {% endif %}
+</div>

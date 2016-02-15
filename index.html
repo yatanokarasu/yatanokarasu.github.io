@@ -10,8 +10,8 @@ subtitle: I have to memoize what I did...
 <article>
   <header>
     {% assign readtime = post.content | number_of_words | divided_by:site.words_per_minute %}
-    <div>
-      <span class="article-meta-data posted-date">{{ post.date | date: "%d %B %Y" }}</span>
+    <div class="article-header">
+      <span class="article-meta-data posted-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time></span>
       <span class="article-meta-data estimate-reading-time"><i class="fa fa-clock-o"></i> Estimate reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}</span>
     </div>
     <h1><a class="article-title fade-transition" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
