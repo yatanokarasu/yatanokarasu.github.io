@@ -1,0 +1,23 @@
+
+/*
+ * Width including border of elements.
+ */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+}
+
+
+/*
+ * Remove margin and padding of html and body elements.
+ */
+html,
+body {
+    margin:                 0;
+    padding:                0;
+}
+

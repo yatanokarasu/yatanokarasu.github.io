@@ -1,32 +1,57 @@
----
-layout: default
-name: Blogs
-title: How did I do that?
-subtitle: I have to memoize what I did...
----
-
-<!-- Post teasers -->
-{% for post in paginator.posts %}
-<article>
-  <header>
-    {% assign readtime = post.content | number_of_words | divided_by:site.words_per_minute %}
-    <div class="article-header">
-      <span class="article-meta-data posted-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time></span>
-      <span class="article-meta-data estimate-reading-time"><i class="fa fa-clock-o"></i> Estimate reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}</span>
-    </div>
-    <h1><a class="article-title fade-transition" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-  </header>
-  <div class="article-contents">
-    {% if post.content contains"<!-- more -->" %}
-      {{ post.content | split:"<!-- more -->" | first % }}
-    {% else %}
-      {{ post.content }}
-    {% endif %}
-  </div>
-  {% if post.content contains"<!-- more -->" %}{% include read-more.html %}{% endif %}
-</article>
-{% endfor %}
-
-
-<!-- Pagi Navigation -->
-{% include page-navigation.html %}
+<!DOCTYPE>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+    <title>Memoizer</title>
+  </head>
+  
+  <body>
+    <header>
+      <a href="/">
+        <img src="images/logo.png">
+        <span>Memoizer</span>
+      </a>
+      
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Tags</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <div>
+        <div>
+          <h1>Title</h1>
+          <h2>Subtitle</h2>
+          <p>notice</p>
+        </div>
+      </div>
+      
+      <div>
+        <article>
+          <header>
+            <p>
+              <span class="article-metadata posted-date"><time datetime="">06 FEBURARY 16</time></span>
+              <span class="article-metadata reading-time"><i class="fa fa-clock-o"></i> Estimated reading time 1min</span>
+            </p>
+          </header>
+          <h1><a href="#">Post title</a></h1>
+          <p>this is post content.</p>
+        </article>
+      </div>
+    </main>
+    
+    <footer>
+      <address>&copy; Yatanokarasu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a>.</address>
+      <small>Code is released under the <a href="https://opensource.org/licenses/MIT">MIT License</a></small>
+      <small>Website and docs licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</small>
+    </footer>
+  </body>
+</html>

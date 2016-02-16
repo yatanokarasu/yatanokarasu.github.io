@@ -17,5 +17,10 @@ paginate: 5
 gems:
   - jekyll-paginate
 
+sass:
+  sass_dir: _scss
+  style: compressed
+
 exclude:
   - README.md
+  - LICENSE
