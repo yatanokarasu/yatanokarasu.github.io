@@ -1,0 +1,168 @@
+
+// -----------------------------------------------------------------------------
+// Body style
+// -----------------------------------------------------------------------------
+
+body {
+    background-color:           $body-color;
+    height:                     1000px;
+}
+
+
+// -----------------------------------------------------------------------------
+// Page header
+// -----------------------------------------------------------------------------
+
+.page-header {
+    background-color:           $page-header-back-color;
+    position:                   fixed;
+    width:                      100%;
+    height:                     70px;
+    box-shadow:                 0 0 5px $header-shadow-color;
+}
+
+.page-header-wrapper {
+    padding:                    0 10px;
+}
+
+.logo {
+    display:                    -webkit-inline-flex;
+    display:                    -moz-inline-flex;
+    display:                    -ms-inline-flex;
+    display:                    -o-inline-flex;
+    display:                    inline-flex;
+    
+    height:                     100%;
+    align-items:                center;
+    float:                      left;
+    
+    
+    span {
+        font-size:              1.6em;
+        padding-left:           5px;
+    }
+}
+
+.toggle-menu {
+    display:                    -webkit-flex;
+    display:                    -moz-flex;
+    display:                    -ms-flex;
+    display:                    -o-flex;
+    display:                    flex;
+    align-items:                center;
+    justify-content:            center;
+    
+    height:                     100%;
+    
+    float:                      right;
+    
+    
+    label {
+        position:               relative;
+        
+        display:                -webkit-flex;
+        display:                -moz-flex;
+        display:                -ms-flex;
+        display:                -o-flex;
+        display:                flex;
+        align-items:            center;
+        justify-content:        center;
+        
+        width:                  55px;
+        height:                 40px;
+        
+        cursor:                 pointer;
+        
+        
+        &:before {
+            content:            "";
+            display:            block;
+            
+            width:              35px;
+            height:             20px;
+            
+            background-color:   $toggle-menu-back-color;
+        }
+        
+        
+        span:before,
+        span:after {
+            position:           absolute;
+            top:                50%;
+            right:              10;
+            
+            content:            "";
+            display:            block;
+            
+            width:              35px;
+            height:             4px;
+            
+            background-color:   $page-header-back-color;
+        }
+        
+        span:before {
+            margin-top:         -6px;
+        }
+        
+        span:after {
+            margin-top:         2px;
+        }
+    }
+}
+
+
+#toggle-menu-state {
+    display:                    none;
+    
+    &:not(:checked) ~ nav {
+        display:                none;
+    }
+    
+    &:checked {
+        & ~ .toggle-menu label {
+            &:before {
+                background-color:   $page-header-back-color;
+            }
+            
+            span:before,
+            span:after {
+                background-color:   $toggle-menu-back-color;
+                margin-top:         -2px;
+                border-radius:      5px;
+            }
+            
+            span:before {
+                transform:          rotate(45deg);
+            }
+            span:after {
+                transform:          rotate(-45deg);
+            }
+        }
+        
+        & ~ nav {
+            position:           absolute;
+        }
+    }
+}
+
+
+
+
+// -----------------------------------------------------------------------------
+// Page footer
+// -----------------------------------------------------------------------------
+
+footer {
+    background-color:       $page-footer-back-color;;
+    min-height:             200px;
+    text-align:             center;
+    
+    
+    address {
+        padding:            20px 10px;
+    }
+    
+    small {
+        display:            block;
+    }
+}

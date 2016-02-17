@@ -9,20 +9,28 @@
   </head>
   
   <body>
-    <header>
-      <a href="/">
-        <img src="images/logo.png">
-        <span>Memoizer</span>
-      </a>
-      
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Categories</a></li>
-          <li><a href="#">Tags</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
+    <header class="page-header">
+      <div class="page-header-wrapper">
+        <a href="/" class="logo">
+          <img src="images/logo.png">
+          <span>Memoizer</span>
+        </a>
+        
+        <input id="toggle-menu-state" type="checkbox">
+        
+        <div class="toggle-menu">
+          <label for="toggle-menu-state"><span></span></label>
+        </div>
+        
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Tags</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     
     <main>
@@ -48,7 +56,7 @@
       </div>
     </main>
     
-    <footer>
+    <footer class="page-footer">
       <address>&copy; Yatanokarasu. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a>.</address>
       <small>Code is released under the <a href="https://opensource.org/licenses/MIT">MIT License</a></small>
       <small>Website and docs licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</small>

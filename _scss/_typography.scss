@@ -1,0 +1,47 @@
+
+// -----------------------------------------------------------------------------
+// Import Web Fonts
+// -----------------------------------------------------------------------------
+
+@import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(//cdn.jsdelivr.net/font-hack/2.019/css/hack-extended.min.css);
+
+
+// -----------------------------------------------------------------------------
+// Body style
+// -----------------------------------------------------------------------------
+
+body {
+    font-family:        $base-font;
+    color:              $base-text-color;
+}
+
+
+// -----------------------------------------------------------------------------
+// Links
+// -----------------------------------------------------------------------------
+
+a {
+    text-decoration:    none;
+    color:              $link-color;
+    
+    &:hover,
+    &:active {
+        outline:        0;
+    };
+}
+
+
+
+footer {
+    color:              $footer-text-color;
+    
+    address {
+        font-style:     normal;
+    }
+    
+    
+    a {
+        color:          $footer-link-color;
+    }
+}

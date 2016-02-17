@@ -1,0 +1,31 @@
+// Definition of all variable used in other SCSS
+
+
+$base-font:         Lato, 'Segoe UI', Calibri, Arial, sans-serif;
+$code-font:         Hack, monospace, Consolas;
+
+
+
+// ---------------------------
+// Colors
+// ---------------------------
+
+// background-colors
+
+$body-color:                #EAEAEA;
+$toggle-menu-back-color:    #2B2B2B;
+$page-header-back-color:    white;
+$page-footer-back-color:    #2B2B2B;
+
+
+// shadow-colors
+
+$header-shadow-color:       #AAAAAA;
+
+
+// text-colors
+
+$base-text-color:           #6B6B6B;
+$link-color:                #6B6B6B;
+$footer-text-color:         lighten($base-text-color, 10);
+$footer-link-color:         lighten($link-color, 30);
