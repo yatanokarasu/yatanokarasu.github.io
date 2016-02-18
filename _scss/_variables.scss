@@ -10,7 +10,7 @@ $code-font:         Hack, monospace, Consolas;
 // Colors
 // ---------------------------
 
-// background-colors
+// Background colors
 
 $body-color:                #EAEAEA;
 $toggle-menu-back-color:    #2B2B2B;
@@ -18,14 +18,33 @@ $page-header-back-color:    white;
 $page-footer-back-color:    #2B2B2B;
 
 
-// shadow-colors
+// Shadow colors
 
 $header-shadow-color:       #AAAAAA;
 
 
-// text-colors
+// Text colors
 
 $base-text-color:           #6B6B6B;
 $link-color:                #6B6B6B;
 $footer-text-color:         lighten($base-text-color, 10);
 $footer-link-color:         lighten($link-color, 30);
+
+
+// Menu colors
+
+$toggle-menu-link-color:    lighten($link-color, 20);
+$menu-entry-border-color:   #EE7E7E;
+
+
+
+// ---------------------------
+// Sizes
+// ---------------------------
+
+// page-header
+
+$page-header-height:        70px;
+$toggle-menu-width:         180px;
+
+$link-font-size:            1.17em;
