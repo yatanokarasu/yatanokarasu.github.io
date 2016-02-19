@@ -12,29 +12,38 @@ $code-font:         Hack, monospace, Consolas;
 
 // Background colors
 
-$body-color:                #EAEAEA;
-$toggle-menu-back-color:    #2B2B2B;
-$page-header-back-color:    white;
-$page-footer-back-color:    #2B2B2B;
+$body-color:                    #EAEAEA;
+$toggle-menu-back-color:        #2B2B2B;
+$page-header-back-color:        white;
+
+$contents-header-back-color:    #2B2B2B;
+$contents-body-back-color:      white;
+
+$page-footer-back-color:        #2B2B2B;
 
 
 // Shadow colors
 
-$header-shadow-color:       #AAAAAA;
+$header-shadow-color:           #AAAAAA;
+$article-shadow-color:          #AAAAAA;
 
 
 // Text colors
 
-$base-text-color:           #6B6B6B;
-$link-color:                #6B6B6B;
-$footer-text-color:         lighten($base-text-color, 10);
-$footer-link-color:         lighten($link-color, 30);
+$base-text-color:               #6B6B6B;
+$link-color:                    #6B6B6B;
+
+$contents-header-color:         white;
+$article-metadata-color:        #ACACAC;
+
+$footer-text-color:             lighten($base-text-color, 10);
+$footer-link-color:             lighten($link-color, 30);
 
 
 // Menu colors
 
-$toggle-menu-link-color:    lighten($link-color, 20);
-$menu-entry-border-color:   #EE7E7E;
+$toggle-menu-link-color:        lighten($link-color, 20);
+$menu-entry-border-color:       #E45145;
 
 
 

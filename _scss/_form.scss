@@ -5,7 +5,6 @@
 
 body {
     background-color:           $body-color;
-    height:                     1000px;
 }
 
 
@@ -16,6 +15,7 @@ body {
 .page-header {
     background-color:           $page-header-back-color;
     position:                   fixed;
+    z-index:                    50;
     
     width:                      100%;
     height:                     $page-header-height;
@@ -188,6 +188,59 @@ body {
 
 
 
+// -----------------------------------------------------------------------------
+// Page contents
+// -----------------------------------------------------------------------------
+
+.contents-header {
+    position:                   relative;
+    height:                     300px;
+    
+    text-align:                 center;
+    
+    color:                      white;
+    background-color:           $contents-header-back-color;
+    
+    
+    div {
+        position:               absolute;
+        bottom:                 0;
+        
+        width:                  100%;
+    }
+}
+
+
+.contents-body {
+    max-width:                  800px;
+    
+    margin:                     50px auto;
+    padding:                    0 10px;
+}
+
+
+article {
+    margin-top:                 30px;
+    padding:                    30px 20px;
+    
+    box-shadow:                 0 0 5px $article-shadow-color;
+    border-radius:              3px;
+    
+    background-color:           $contents-body-back-color;
+}
+
+
+.article-metadata {
+    display:                    block;
+    
+    margin:                     5px 0;
+    
+    color:                      $article-metadata-color;
+    font-size:                  0.75em;
+    text-transform:             uppercase;
+}
+
+
 
 // -----------------------------------------------------------------------------
 // Page footer
@@ -200,7 +253,7 @@ footer {
     
     
     address {
-        padding:            20px 10px;
+        padding:            40px 10px 20px;
     }
     
     small {
