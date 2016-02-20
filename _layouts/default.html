@@ -1,0 +1,24 @@
+<!DOCTYPE>
+<html lang="ja">
+  <head>
+    {% include metadata.html %}
+  </head>
+  
+  <body>
+    <!-- Page Header -->
+    {% include header.html %}
+    
+    <main>
+      <!-- Contents Header -->
+      {% include contents-header.html %}
+      
+      <!-- Contents Body -->
+      <div class="contents-body">
+        {{ content }}
+      </div>
+    </main>
+    
+    <!-- Page Footer -->
+    {% include footer.html %}
+  </body>
+</html>

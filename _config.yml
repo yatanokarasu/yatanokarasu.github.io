@@ -9,6 +9,17 @@ words_per_minute: 200
 author:
   name: yatanokarasu
 
+# Menu
+menus:
+  - title:  'Home'
+    url:    '/'
+  - title:  'Categories'
+    url:    '/categories'
+  - title:  'Tags'
+    url:    '/tags'
+  - title:  'About'
+    url:    '/about'
+
 # Build settings
 markdown: kramdown
 

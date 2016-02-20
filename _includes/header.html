@@ -1,0 +1,24 @@
+<header class="page-header">
+  <div class="page-header-wrapper">
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <img src="/images/logo.png">
+      <span>Memoizer</span>
+    </a>
+    
+    <input id="toggle-menu-state" type="checkbox" autocomplete="off">
+    
+    <div class="toggle-menu">
+      <label for="toggle-menu-state"><span></span></label>
+    </div>
+    
+    <!-- Menu -->
+    <nav>
+      <ul>
+        {% for menu in site.menus %}
+        <li><a class="menu-entry" href="{{ menu.url }}">{{ menu.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
