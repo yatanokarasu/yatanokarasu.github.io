@@ -64,12 +64,13 @@ pre {
 footer {
     color:              $footer-text-color;
     
-    address {
-        font-style:     normal;
-    }
-    
     
     a {
         color:          $footer-link-color;
     }
+}
+
+
+address {
+    font-style:     normal;
 }

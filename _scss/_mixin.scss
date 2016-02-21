@@ -20,7 +20,7 @@
 // Corners
 // ---------------------------
 
-@mixin rounded($radius:4px) {
+@mixin border-rounded($radius:4px) {
     -webkit-border-radius:          $radius;
     -moz-border-radius:             $radius;
     -ms-border-radius:              $radius;
