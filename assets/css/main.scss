@@ -5,9 +5,12 @@
 @charset "utf-8";
 
 
+@import "mixin";                            /* Utility Mixins                       */
 @import "variables";                        /* Variables used by other SCSS files.  */
 @import "reset";                            /* Reset style of primal elements       */
 @import "typography";                       /* Typography (Colors and Font styles)  */
 @import "form";                             /* Page form style                      */
 @import "paginator";                        /* Pagination                           */
+@import "elements";                         /* Elements                             */
+@import "highlight";                        /* Code Highlight                       */
 @import "vendor/font-awesome/font-awesome"; /* Font-Awesome                         */

@@ -1,5 +1,17 @@
 <div class="contents-footer">
-  <a href="#" class="button previous"></a>
-  <span class="paginator">Page 888 of 999</span>
-  <a href="#" class="button next"></a>
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+      <a class="button previous" href="/"></a>
+    {% else %}
+      <a class="button previous" href="/page{{ paginator.previous_page }}"></a>
+    {% endif %}
+  {% else %}
+    <span class="button previous disable"></span>
+  {% endif %}
+  <span class="paginator">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a class="button next" href="/page{{ paginator.next_page }}"></a>
+  {% else %}
+    <span class="button next disable"></span>
+  {% endif %}
 </div>

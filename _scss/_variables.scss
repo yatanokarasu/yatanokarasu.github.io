@@ -1,8 +1,10 @@
 // Definition of all variable used in other SCSS
 
-
 $base-font:         Lato, 'Segoe UI', Calibri, Arial, sans-serif;
 $code-font:         Hack, monospace, Consolas;
+
+$doc-font-size:     16;
+$doc-line-height:   26;
 
 
 
@@ -50,6 +52,9 @@ $menu-entry-border-color:       #E45145;
 
 $button-primary-border-color:   #2B2B2B;
 $button-primary-back-color:     #2B2B2B;
+$button-primary-text-color:     #2B2B2B;
+$button-disable-border-color:   #ACACAC;
+$button-disable-text-color:     #ACACAC;
 
 
 

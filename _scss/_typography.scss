@@ -12,6 +12,7 @@
 // -----------------------------------------------------------------------------
 
 body {
+    font-size:          0px + $doc-font-size;
     font-family:        $base-font;
     color:              $base-text-color;
 }
@@ -31,6 +32,33 @@ a {
     };
 }
 
+
+// -----------------------------------------------------------------------------
+// Codes
+// -----------------------------------------------------------------------------
+
+tt,
+code,
+kbd,
+samp,
+pre {
+    font-family:        $code-font;
+}
+
+
+pre {
+    overflow-x:         auto;
+    
+    &::-webkit-scrollbar {
+        height:             12px;
+        background-color:   #34362E;
+        border-radius:      0 0 4px 4px;
+    }
+    &::-webkit-scrollbar-thumb:horizontal {
+        background-color:   #6A6D5D;
+        border-radius:      4px;
+    }
+}
 
 
 footer {

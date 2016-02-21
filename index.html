@@ -5,16 +5,28 @@ description:    I have to memoize what I did...
 ---
 
 <!-- Post teasers -->
+{% for post in paginator.posts %}
 <article>
   <header>
+    {% assign readtime = post.content | number_of_words | divided_by:site.words_per_minute %}
     <p>
-      <span class="article-metadata posted-date"><time datetime="">06 FEBURARY 16</time></span>
-      <span class="article-metadata reading-time"><i class="fa fa-clock-o"></i> Estimated reading time ~ 1min</span>
+      <span class="article-metadata posted-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>
+      <span class="article-metadata reading-time"><i class="fa fa-clock-o"></i> Estimated reading time ~{% if readtime <= 1%}1 min{% else %}{{ readtime }} mins{% endif %}</span>
     </p>
   </header>
-  <h1><a href="#">Post title</a></h1>
-  <p>this is post content.</p>
+  <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+  <section>
+    {% if post.content contains"<!-- more -->" %}
+      {{ post.content | split:"<!-- more -->" | first }}
+    {% else %}
+      {{ post.content }}
+    {% endif %}
+  </section>
+  {% if post.content contains"<!-- more -->" %}
+  <a class="button" href="{{ post.url | prepend: site.baseurl }}">Read More...</a>
+  {% endif %}
 </article>
+{% endfor %}
 
 <!-- Page navigation -->
 {% include page-navigator.html %}

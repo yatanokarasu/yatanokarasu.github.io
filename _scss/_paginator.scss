@@ -12,12 +12,15 @@
 
 
 .button {
+    display:                    inline-block;
+    
     border:                     2px solid $button-primary-border-color;
     border-radius:              5px;
     
     margin:                     10px;
     padding:                    8px 20px;
     
+    color:                      $button-primary-text-color;
     font-size:                  .875rem;
     
     
@@ -28,9 +31,15 @@
 }
 
 
-.button.previous::before {
+.previous::before {
     content:                    "<< ";
 }
-.button.next::before {
+.next::before {
     content:                    " >>";
+}
+
+
+.disable {
+    border:                     2px solid $button-disable-border-color;
+    color:                      $button-disable-text-color;
 }
