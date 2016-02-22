@@ -14,8 +14,27 @@
 body {
     font-size:          0px + $doc-font-size;
     font-family:        $base-font;
+    
     color:              $base-text-color;
 }
+
+
+// -----------------------------------------------------------------------------
+// Headings
+// -----------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:        $base-font;
+}
+
+h1 {
+    @include            font-rem(28);
+    
+    @media #{$medium} {
+        @include        font-rem(32);
+    }
+}
+
 
 
 // -----------------------------------------------------------------------------
@@ -30,6 +49,75 @@ a {
     &:active {
         outline:        0;
     };
+}
+
+
+// -----------------------------------------------------------------------------
+// Figures
+// -----------------------------------------------------------------------------
+
+figcaption {
+    padding-top:        10px;
+    
+    font-size:          .9em;
+    line-height:        1.2;
+    
+    color:              lighten($base-text-color, 20);
+}
+
+
+// -----------------------------------------------------------------------------
+// Note text
+// -----------------------------------------------------------------------------
+
+.notice {
+    margin:             1em 0;
+    padding:            .5em 1em;
+    
+    @include            font(13);
+    background-color:   $body-color;
+    
+    border:             1px solid darken($body-color, 20);
+    @include            border-rounded(3px);
+}
+
+
+// -----------------------------------------------------------------------------
+// Blockquotes
+// -----------------------------------------------------------------------------
+
+blockquote {
+    font-family:        $base-font;
+    font-style:         italic;
+    
+    border-left:        8px solid $border-color;
+    
+    margin:             1em 20px;
+    padding-left:       20px;
+    
+    //@media #{$medium} {
+    //    margin-left:    -28px;
+    //}
+}
+
+
+// -----------------------------------------------------------------------------
+// List items
+// -----------------------------------------------------------------------------
+
+.contents-entry li {
+    margin-bottom:      7px;
+}
+
+
+// -----------------------------------------------------------------------------
+// Footnotes
+// -----------------------------------------------------------------------------
+
+.footnotes {
+    ol, li, p {
+        font-size:      .875rem;
+    }
 }
 
 
@@ -50,13 +138,29 @@ pre {
     overflow-x:         auto;
     
     &::-webkit-scrollbar {
-        height:             12px;
-        background-color:   #34362E;
-        border-radius:      0 0 4px 4px;
+        height:             10px;
+        background-color:   $scrollbar-color;
+        border-radius:      5px;
     }
     &::-webkit-scrollbar-thumb:horizontal {
-        background-color:   #6A6D5D;
-        border-radius:      4px;
+        background-color:   $scrollbar-back-color;
+        border-radius:      5px;
+    }
+}
+
+
+p,
+li {
+    code {
+        font-size:          .7em;
+        
+        background-color:   lighten($code-primary-back-color, 80);
+        
+        margin:             0 2px;
+        padding:            0 5px;
+        
+        border:             1px solid lighten($code-primary-back-color, 65);
+        @include            border-rounded(3px);
     }
 }
 

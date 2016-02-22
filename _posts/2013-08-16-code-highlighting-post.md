@@ -15,13 +15,13 @@ Syntax highlighting is a feature that displays source code, in different colors 
 
 To modify styling and highlight colors edit `/_sass/_pygments.scss`.
 
-{% highlight css %}
+~~~ css
 #container {
     float: left;
     margin: 0 -240px 0 0;
     width: 100%;
 }
-{% endhighlight %}
+~~~
 
 {% highlight html %}
 {% raw %}
@@ -54,6 +54,51 @@ module Jekyll
     end
   end
 end
+{% endhighlight %}
+
+{% highlight java %}
+package org.ravnes.pentomino;
+
+import java.util.List;
+
+
+public class Pentomino extends Thread implements Serialize {
+  
+  private static final class Candidate {
+    
+    private final String test = "test";
+    
+    private static final VERSION = "10.2.0.1";
+    
+    private List<String> list;
+    
+    
+    public Candidate() {
+      this.list = new ArrayList<String>();
+      
+      if (list.size() == 0) {
+        list.add("hogehoge");
+      }
+      
+      if (list.contains("moke")) {
+        list.add("fuga");
+      }
+    }
+    
+    
+    public String get(final String key) {
+      return this.key.get(key);
+    }
+    
+    
+    private static boolean contains(final String key) {
+      return this.list.contains(key);
+    }
+    
+  }
+  
+}
+
 {% endhighlight %}
 
 

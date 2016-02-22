@@ -1,7 +1,7 @@
 // Definition of all variable used in other SCSS
 
 $base-font:         Lato, 'Segoe UI', Calibri, Arial, sans-serif;
-$code-font:         Hack, monospace, Consolas;
+$code-font:         Hack, Consolas, monospace;
 
 $doc-font-size:     16;
 $doc-line-height:   26;
@@ -11,6 +11,9 @@ $doc-line-height:   26;
 // ---------------------------
 // Colors
 // ---------------------------
+
+$base-color:                    rgba(#222, 0.8);
+
 
 // Background colors
 
@@ -56,11 +59,17 @@ $button-primary-text-color:     #2B2B2B;
 $button-disable-border-color:   #ACACAC;
 $button-disable-text-color:     #ACACAC;
 
+$scrollbar-color:               #34362E;
+$scrollbar-back-color:          #6A6D5D;
+
 
 // Code colors
 $code-primary-back-color:       #262822;
 $code-primary-text-color:       #F0F0F0;
 
+
+// Border colors
+$border-color:                  lighten(#222222, 60);
 
 
 
@@ -70,7 +79,17 @@ $code-primary-text-color:       #F0F0F0;
 
 // page-header
 
-$page-header-height:        70px;
-$toggle-menu-width:         180px;
+$page-header-height:            70px;
+$toggle-menu-width:             180px;
 
-$link-font-size:            1.17em;
+$link-font-size:                1.17em;
+
+
+
+// -----------------------------------------------------------------------------
+// Screen Size
+// -----------------------------------------------------------------------------
+
+$small:                         "only screen and (min-width: 30em)";
+$medium:                        "only screen and (min-width: 48em)";
+$large:                         "only screen and (min-width: 62.5em)";

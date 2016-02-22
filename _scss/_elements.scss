@@ -1,13 +1,92 @@
 
 
 // -----------------------------------------------------------------------------
-// Figures and Images
+// Figures, Code snippet and Images
 // -----------------------------------------------------------------------------
 
 figure {
     margin:             0 0 1em;
     padding:            10px 0;
+    
+    img {
+        margin-bottom:  10px;
+    }
+    
+    a {
+        img {
+            @include                        translate(0, 0);
+            -webkit-transition-duration:    0.25s;
+            -moz-transition-duration:       0.25s;
+            -ms-transition-duration:        0.25s;
+            -o-transition-duration:         0.25s;
+            transition-duration:            0.25s;
+            
+            &:hover {
+                @include                    translate(0, -5px);
+                @include                    box-shadow(0 0 10px fade($base-color, 20));
+            }
+        }
+    }
+    
+    &.half {
+        @media #{$large} {
+            img {
+                width: 48%;
+                float: left;
+                margin-right: 10px;
+            }
+            figcaption {
+                clear: left;
+            }
+        }
+    }
+    
+    
+    &.third {
+        @media #{$large} {
+            img {
+                width: 31%;
+                float: left;
+                margin-right: 10px;
+            }
+            
+            figcaption {
+                clear: left;
+            }
+        }
+    }
 }
+
+figure.center {
+    text-align:         center;
+}
+
+figure.center img {
+    float:              none;
+}
+
+.image-left {
+    float:              none;
+    
+    @media #{$medium} {
+        float:          left;
+    }
+}
+
+.image-right {
+    float:              none;
+    
+    @media #{$medium} {
+        float:          right;
+    }
+}
+
+
+div.highlighter-rouge {
+    margin:             0 0 1em;
+    padding:            10px 0;
+}
+
 
 
 iframe {

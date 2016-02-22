@@ -14,16 +14,59 @@
   line-height:  0    + round($doc-line-height / $size*10000) / 10000;
 }
 
+// ---------------------------
+// Just the REMs
+// ---------------------------
+
+@mixin font-rem($size) {
+  font-size:    0px  + $size;
+  font-size:    0rem + $size / $doc-font-size;
+}
+
 
 
 // ---------------------------
 // Corners
 // ---------------------------
 
+// .border-rounded(VALUE);
 @mixin border-rounded($radius:4px) {
     -webkit-border-radius:          $radius;
     -moz-border-radius:             $radius;
     -ms-border-radius:              $radius;
     -o-border-radius:               $radius;
     border-radius:                  $radius;
+}
+
+
+// .box-shadow(HORIZONTAL VERTICAL BLUR COLOR))
+@mixin box-shadow($shadow: 0 1px 3px rgba(0, 0, 0, .25)) {
+  -webkit-box-shadow:               $shadow;
+  -moz-box-shadow:                  $shadow;
+  -ms-box-shadow:                   $shadow;
+  -o-box-shadow:                    $shadow;
+  box-shadow:                       $shadow;
+}
+
+
+// ---------------------------
+// Transformations
+// ---------------------------
+
+// .transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
+@mixin transition($transition) {
+  -webkit-transition :              $transition;
+  -moz-transition :                 $transition;
+  -ms-transition :                  $transition;
+  -o-transition :                   $transition;
+  transition :                      $transition;
+}
+
+// .translate(VALUE, VALUE)
+@mixin translate($x: 0, $y: 0) {
+  -webkit-transform:                translate($x, $y);
+  -moz-transform:                   translate($x, $y);
+  -ms-transform:                    translate($x, $y);
+  -o-transform:                     translate($x, $y);
+  transform:                        translate($x, $y); 
 }
