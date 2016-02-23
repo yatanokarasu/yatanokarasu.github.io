@@ -20,7 +20,7 @@ body {
     width:                      100%;
     height:                     $page-header-height;
     
-    box-shadow:                 0 0 5px $header-shadow-color;
+    box-shadow:                 0 2px 10px $header-shadow-color;
     
     nav {
         position:               absolute;
@@ -63,6 +63,12 @@ body {
     span {
         font-size:              1.6em;
         padding-left:           5px;
+    }
+    
+    
+    &:hover span {
+        color:                  $base-color;
+        text-shadow:            0 0 3px lighten($base-color, 40);
     }
 }
 
@@ -185,9 +191,8 @@ body {
     font-size:                  $link-font-size;
     
     &:hover {
-        font-weight:            bold;
-        color:                  lighten($toggle-menu-link-color, 20);
-        text-shadow:            0 0 5px darken($toggle-menu-link-color, 10);
+        color:                  lighten($toggle-menu-link-color, 40);
+        text-shadow:            0 0 1px darken($toggle-menu-link-color, 30);
         border-left:            5px solid $menu-entry-border-color;
     }
 }
@@ -237,6 +242,12 @@ body {
     h1, h2, h3, h4, h5, h6, p, li {
         word-wrap:              break-word;
     }
+}
+
+
+.post-link:hover {
+    color:                  $base-color;
+    text-shadow:            0 0 3px lighten($base-color, 40);
 }
 
 

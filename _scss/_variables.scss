@@ -18,7 +18,6 @@ $base-color:                    rgba(#222, 0.8);
 // Background colors
 
 $body-color:                    #EAEAEA;
-$toggle-menu-back-color:        #2B2B2B;
 $page-header-back-color:        white;
 
 $contents-header-back-color:    #2B2B2B;
@@ -29,12 +28,11 @@ $page-footer-back-color:        #2B2B2B;
 
 // Shadow colors
 
-$header-shadow-color:           #AAAAAA;
+$header-shadow-color:           rgba(#2B2B2B, 0.4);
 $article-shadow-color:          #AAAAAA;
 
 
 // Text colors
-
 $base-text-color:               #6B6B6B;
 $link-color:                    #6B6B6B;
 
@@ -47,7 +45,7 @@ $footer-link-color:             lighten($link-color, 30);
 
 // Menu colors
 
-$toggle-menu-link-color:        lighten($link-color, 20);
+$toggle-menu-link-color:        lighten($link-color, 40);
 $menu-entry-border-color:       #E45145;
 
 

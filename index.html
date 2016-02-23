@@ -14,7 +14,7 @@ description:    I have to memoize what I did...
       <span class="article-metadata reading-time"><i class="fa fa-clock-o"></i> Estimated reading time ~{% if readtime <= 1%}1 min{% else %}{{ readtime }} mins{% endif %}</span>
     </p>
   </header>
-  <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+  <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
   <section class="contents-entry">
     {% if post.content contains"<!-- more -->" %}
       {{ post.content | split:"<!-- more -->" | first }}
