@@ -6,5 +6,8 @@
     {% else %}
       <h3>{{ page.description }}</h3>
     {% endif %}
+    {% if page.modified %}
+      <p><i class="fa fa-clock-o"></i> modified: {{ page.modified | date: "%B %d, %Y" }}</p>
+    {% endif %}
   </div>
 </div>

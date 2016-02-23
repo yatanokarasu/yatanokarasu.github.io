@@ -1,6 +1,7 @@
 
 # Site title
 title: Memoizer
+description: Articles of this website is notes for oneself.
 baseurl: ""
 
 words_per_minute: 120
