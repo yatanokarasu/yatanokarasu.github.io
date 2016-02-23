@@ -1,16 +1,10 @@
 <div class="contents-header">
   <div>
     <h1>{{ page.title }}</h1>
-    {% if page.date %}
-      <h2><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></h2>
-    {% else %}
-      <h2>{{ page.subtitle }}</h2>
-    {% endif %}
     {% if page.layout == 'post' %}
-      {% assign readtime = page.content | number_of_words | divided_by:site.words_per_minute %}
-      <p><i class="fa fa-clock-o"></i> Estimate reading time ~{% if readtime <= 1 %}1 min{% else %}{{ readtime }} mins{% endif %}</p>
+      <h3><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></h3>
     {% else %}
-      <p>{{ page.description }}</p>
+      <h3>{{ page.description }}</h3>
     {% endif %}
   </div>
 </div>
