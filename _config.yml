@@ -14,12 +14,16 @@ author:
 menus:
   - title:  'Home'
     url:    '/'
+    icon:   'home'
   - title:  'Categories'
     url:    '/categories'
+    icon:   'archive'
   - title:  'Tags'
     url:    '/tags'
+    icon:   'tags'
   - title:  'About'
     url:    '/about'
+    icon:   'question-circle'
 
 # Build settings
 markdown: kramdown

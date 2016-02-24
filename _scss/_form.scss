@@ -38,8 +38,14 @@ body {
     }
 }
 
+.menu-icon {
+    width:                      25px;
+}
+
 .page-header-wrapper {
     padding:                    0 10px;
+    
+    max-width:                  900px;
 }
 
 .logo {
@@ -258,6 +264,12 @@ body {
     li > a {
         border-bottom:          1px dotted lighten($link-color, 30);
         
+        &:not(.reversefootnote):before {
+            content:            "\f0c1";
+            font-family:        FontAwesome;
+            padding-right:      5px;
+        }
+        
         &:hover {
             border-bottom-style:    solid;
         }
@@ -287,6 +299,52 @@ body {
     width:                      100%;
     
     margin-top:                 30px;
+}
+
+
+.tags {
+    @include                    font-rem(12);
+    color:                      lighten($base-color, 60);
+    
+    text-transform:             uppercase;
+    list-style:                 none;
+    
+    margin-left:                0;
+    padding-left:               0;
+    
+    li {
+        display:                inline-block;
+    }
+    
+    a {
+        color:                  lighten($base-color, 60);
+    }
+    
+    .tag {
+        display:                inline-block;
+        margin:                 8px 3px;
+        color:                  white;
+        
+        @include                border-rounded(3px);
+        
+        span {
+            padding:            3px 6px;
+        }
+        
+        .term {
+            background-color:   lighten($base-color, 50);
+            @include            border-radius(0, 0, 3px, 3px);
+        }
+        
+        .count {
+            background-color:   lighten($base-color, 40);
+            @include            border-radius(3px, 3px, 0, 0);
+        }
+        
+        &:hover {
+            background-color:   lighten($base-color, 40);
+        }
+    }
 }
 
 

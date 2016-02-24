@@ -1,6 +1,7 @@
 <div class="contents-header">
   <div>
-    <h1>{{ page.title }}</h1>
+    {% capture icon %}{% for menu in site.menus %}{% if menu.title == page.title %}{{ menu.icon }}{% endif %}{% endfor %}{% endcapture %}
+    <h1>{% if icon %}<i class="fa fa-{{ icon }}"></i> {% endif %}{{ site.menuspage.title }}{{ page.title }}</h1>
     {% if page.layout == 'post' %}
       <h3><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></h3>
     {% else %}

@@ -39,6 +39,37 @@
 }
 
 
+// .border-radius(VALUE,VALUE,VALUE,VALUE);
+@mixin border-radius($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+  -webkit-border-top-right-radius:    $topright;
+  -webkit-border-bottom-right-radius: $bottomright;
+  -webkit-border-bottom-left-radius:  $bottomleft;
+  -webkit-border-top-left-radius:     $topleft;
+  -moz-border-radius-topright:        $topright;
+  -moz-border-radius-bottomright:     $bottomright;
+  -moz-border-radius-bottomleft:      $bottomleft;
+  -moz-border-radius-topleft:         $topleft;
+  -ms-border-radius-topright:         $topright;
+  -ms-border-radius-bottomright:      $bottomright;
+  -ms-border-radius-bottomleft:       $bottomleft;
+  -ms-border-radius-topleft:          $topleft;
+  -o-border-radius-topright:          $topright;
+  -o-border-radius-bottomright:       $bottomright;
+  -o-border-radius-bottomleft:        $bottomleft;
+  -o-border-radius-topleft:           $topleft;
+  border-top-right-radius:            $topright;
+  border-bottom-right-radius:         $bottomright;
+  border-bottom-left-radius:          $bottomleft;
+  border-top-left-radius:             $topleft;
+  
+  -webkit-background-clip:            padding-box;
+  -moz-background-clip:               padding;
+  -ms-background-clip:                padding-box;
+  -o-background-clip:                 padding;
+  background-clip:                    padding-box;
+}
+
+
 // .box-shadow(HORIZONTAL VERTICAL BLUR COLOR))
 @mixin box-shadow($shadow: 0 1px 3px rgba(0, 0, 0, .25)) {
   -webkit-box-shadow:               $shadow;

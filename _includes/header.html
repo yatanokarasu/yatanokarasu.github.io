@@ -3,7 +3,7 @@
     <!-- Logo -->
     <a href="/" class="logo">
       <img src="/images/logo.svg">
-      <span>Memoizer</span>
+      <span>{{ site.title }}</span>
     </a>
     
     <input id="toggle-menu-state" type="checkbox" autocomplete="off">
@@ -16,7 +16,7 @@
     <nav>
       <ul>
         {% for menu in site.menus %}
-        <li><a class="menu-entry" href="{{ menu.url }}">{{ menu.title }}</a></li>
+        <li><a class="menu-entry" href="{{ menu.url }}"><i class="fa fa-{{ menu.icon }} menu-icon"></i> {{ menu.title }}</a></li>
         {% endfor %}
       </ul>
     </nav>

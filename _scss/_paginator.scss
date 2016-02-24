@@ -22,12 +22,12 @@
     
     color:                      $button-primary-text-color;
     font-size:                  .875rem;
-    
-    
-    &:hover {
-        color:                  white;
-        background-color:       $button-primary-back-color;
-    }
+}
+
+
+a.button:hover {
+    color:                      white;
+    background-color:           $button-primary-back-color;
 }
 
 
