@@ -4,5 +4,6 @@
 <meta name="description" content="technical memoizer" />
 <meta name="keywords" content="{{ page.keywords | join:',' }}" />
 <meta name="author" content="{{ site.author.name }}" />
+<meta http-equiv="cleartype" content="on">
 <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-<title>{% if page.name != null %}{{ page.name }} - {% endif %}{{ site.title }}</title>
+<title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
