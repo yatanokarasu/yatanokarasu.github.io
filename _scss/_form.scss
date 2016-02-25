@@ -44,6 +44,7 @@ body {
 
 .page-header-wrapper {
     padding:                    0 10px;
+    margin:                     0 auto;
     
     max-width:                  900px;
 }
@@ -251,9 +252,15 @@ body {
 }
 
 
+.tag-header {
+    margin-top:                 -($page-header-height + 10);
+    padding-top:                 ($page-header-height + 10);
+}
+
+
 .post-link:hover {
-    color:                  $base-color;
-    text-shadow:            0 0 3px lighten($base-color, 40);
+    color:                      $base-color;
+    text-shadow:                0 0 3px lighten($base-color, 40);
 }
 
 
@@ -271,7 +278,9 @@ body {
         }
         
         &:hover {
+            color:                  $base-color;
             border-bottom-style:    solid;
+            text-shadow:            0 0 1px lighten($base-color, 40);
         }
     }
 }
@@ -322,13 +331,14 @@ body {
     
     .tag {
         display:                inline-block;
+        
         margin:                 8px 3px;
+        padding:                3px 0;
+        
         color:                  white;
         
-        @include                border-rounded(3px);
-        
         span {
-            padding:            3px 6px;
+            padding:            3px 8px;
         }
         
         .term {
@@ -342,7 +352,14 @@ body {
         }
         
         &:hover {
-            background-color:   lighten($base-color, 40);
+            .term {
+                background-color:   lighten($menu-entry-border-color, 10);
+            }
+            
+            .count {
+                background-color:   $tag-highlight-color;
+            }
+            
         }
     }
 }
