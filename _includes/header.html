@@ -15,9 +15,11 @@
     <!-- Menu -->
     <nav>
       <ul>
-        {% for menu in site.menus %}
-        <li><a class="menu-entry" href="{{ menu.url }}"><i class="fa fa-{{ menu.icon }} menu-icon"></i> {{ menu.title }}</a></li>
-        {% endfor %}
+        <li><a class="menu-entry" href="/"><i class="fa fa-home menu-icon"></i> Home</a></li>
+        <li><a class="menu-entry" href="/categories"><i class="fa fa-archive menu-icon"></i> Categories</a></li>
+        <li><a class="menu-entry" href="/tags"><i class="fa fa-tags menu-icon"></i> Tags</a></li>
+        <li><a class="menu-entry" href="/about"><i class="fa fa-question-circle menu-icon"></i> About</a></li>
+        <li><a class="menu-entry" href="/search"><i class="fa fa-search menu-icon"></i> Search</a></li>
       </ul>
     </nav>
   </div>
