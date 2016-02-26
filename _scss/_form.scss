@@ -297,10 +297,15 @@ body {
 }
 
 
-.contents-footer {
-    text-align:                 center;
+.contents-footer > div {
+    border-top:                 2px dotted lighten($base-color, 60);
     
     margin-top:                 30px;
+}
+
+
+.related-tags {
+    text-align:                 center;
 }
 
 
