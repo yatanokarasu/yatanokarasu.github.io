@@ -7,7 +7,7 @@ permalink:      /tags/
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign tags = site_tags | split:',' | sort %}
 
-<ul class="tags">
+<ul class="tags inline-list">
   {% for tag in tags %}
     {% assign item = tag | strip_newlines | strip %}
     <li><a href="#{{ item }}" class="tag"><span class="term">{{ item }}</span><span class="count">{{ site.tags[item].size }}</span></a></li>

@@ -7,7 +7,7 @@ permalink:      /categories/
 {% capture site_categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign categories = site_categories | split:',' | sort %}
 
-<ul class="tags">
+<ul class="tags inline-list">
   {% for category in categories %}
     {% assign item = category | strip_newlines | strip %}
     <li><a href="#{{ item }}" class="tag"><span class="term">{{ item }}</span><span class="count">{{ site.categories[item].size }}</span></a></li>

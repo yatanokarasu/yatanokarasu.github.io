@@ -298,16 +298,17 @@ body {
 
 
 .contents-footer {
-    display:                    -webkit-inline-flex;
-    display:                    -moz-inline-flex;
-    display:                    -ms-inline-flex;
-    display:                    -o-inline-flex;
-    display:                    inline-flex;
-    justify-content:            center;
-    
-    width:                      100%;
+    text-align:                 center;
     
     margin-top:                 30px;
+}
+
+
+.inline-list {
+    list-style:                 none;
+    
+    margin-left:                0;
+    padding-left:               0;
 }
 
 
@@ -316,10 +317,6 @@ body {
     color:                      lighten($base-color, 60);
     
     text-transform:             uppercase;
-    list-style:                 none;
-    
-    margin-left:                0;
-    padding-left:               0;
     
     li {
         display:                inline-block;
@@ -339,10 +336,12 @@ body {
         
         span {
             padding:            3px 8px;
+            background-color:   lighten($base-color, 50);
+            
+            @include            border-rounded(3px);
         }
         
         .term {
-            background-color:   lighten($base-color, 50);
             @include            border-radius(0, 0, 3px, 3px);
         }
         
@@ -370,7 +369,7 @@ body {
 // Page footer
 // -----------------------------------------------------------------------------
 
-footer {
+.page-footer {
     background-color:       $page-footer-back-color;;
     min-height:             200px;
     margin-top:             30px;
