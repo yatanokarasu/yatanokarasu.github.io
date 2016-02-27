@@ -8,14 +8,43 @@ layout:         default
     {{ content }}
   </section>
   <footer class="contents-footer">
-    <div class="related-tags">
-      <h3>Tagged as follows</h3>
-      <span class="tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags#{{ tag }}" title="Pages tagged {{ tag }}" class="tag"><span>{{ tag }}</span></a>{% unless forloop.last %}{% endunless %}{% endfor %}</span>
+    {% if page.tags.size != 0 %}
+    <div style="text-align: center">
+      <h2>Tagged as follows</h2>
+      <span class="tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags#{{ tag }}" title="Pages tagged {{ tag }}" class="tag"><span>{{ tag }}</span></a>{% endfor %}</span>
     </div>
-    <div class="around-posts">
-      <div class="previous-post"></div>
-      <div class="next-post"></div>
+    {% endif %}
+    {% if page.previous or page.next %}
+    <div>
+      <h2 style="text-align: center">Read more</h2>
+      <div class="contents-navigator-wrapper">
+        <div class="contents-navigator">
+          {% if page.previous %}
+          <div>
+            <span class="indicator"><i class="fa fa-arrow-circle-o-left"></i></span>
+            <div class="previous-post">
+              <span class="guide">Previous post</span>
+              <h3><a href="{{ page.previous.url | prepend: baseurl }}" title="{{ page.previous.title }}">{{ page.previous.title }}</a></h3>
+              <span>Published on {{ page.previous.date | date: "%B %d, %Y" }}</span>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+        <div class="contents-navigator">
+          {% if page.next %}
+          <div>
+            <span class="indicator"><i class="fa fa-arrow-circle-o-right"></i></span>
+            <div class="next-post">
+              <span class="guide">Next post</span>
+              <h3><a href="{{ page.next.url | prepend: baseurl }}" title="{{ page.next.title }}">{{ page.next.title }}</a></h3>
+              <span>Published on {{ page.next.date | date: "%B %d, %Y" }}</span>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
     </div>
+    {% endif %}
   </footer>
 </article>
 
