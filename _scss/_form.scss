@@ -36,6 +36,9 @@ body {
             list-style:         none;
         }
     }
+    @media #{$large} {
+        
+    }
 }
 
 .menu-icon {
