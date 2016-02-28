@@ -23,7 +23,7 @@ layout:         default
           <a href="{{ page.previous.url | prepend: baseurl }}" title="{{ page.previous.title }}">
             <span>Previous post</span>
             <h3>{{ page.previous.title }}</h3>
-            <span>Published on {{ page.previous.date | date: "%b %d, %Y" }}</span>
+            <span class="posted-date">Published on {{ page.previous.date | date: "%b %d, %Y" }}</span>
           </a>
           {% endif %}
         </div>
@@ -32,7 +32,7 @@ layout:         default
           <a href="{{ page.next.url | prepend: baseurl }}" title="{{ page.next.title }}">
             <span>Next post</span>
             <h3>{{ page.next.title }}</h3>
-            <span>Published on {{ page.next.date | date: "%b %d, %Y" }}</span>
+            <span class="posted-date">Published on {{ page.next.date | date: "%b %d, %Y" }}</span>
           </a>
           {% endif %}
         </div>

@@ -323,73 +323,77 @@ body {
     display:                    inline-block;
     
     width:                      100%;
-    max-width:                  350px;
+    max-width:                  300px;
     
-    margin:                     10px 0;
+    margin-bottom:              10px;
     
-    span {
-        display:                block;
-    }
     
-    h3 {
+    * {
         margin:                 0;
-        word-wrap:              break-word;
-        
-        &:before,
-        &:after {
-            display:                inline-block;
-            
-            font-family:            FontAwesome;
-            font-size:              1.5em;
-            text-align:             center;
-            vertica-align:          middle;
-            
-            width:                  50px;
-        }
     }
     
     a {
+        position:               relative;
+        
+        display:                inline-block;
+        width:                  100%;
+        
         color:                  lighten($base-text-color, 20);
+        
         
         &:hover {
             color:              darken($base-text-color, 20);
             text-shadow:        0 0 1px $base-text-color;
         }
+        
+        &:before,
+        &:after {
+            position:           absolute;
+            top:                50%;
+            
+            display:            inline-block;
+            width:              $indicator-width;
+            
+            margin-top:         -0.5em;
+            
+            font-family:        FontAwesome;
+            font-size:          1.8em;
+            
+            text-align:         center;
+        }
+        
+        .posted-date {
+            font-size:          .8em;
+        }
     }
 }
 
+
 .previous-post {
     text-align:                 left;
+    padding-left:               $indicator-width;
     
-    span,
-    h3 {
-        margin-left:            50px;
-    }
-    
-    h3:before {
+    a:before {
         content:                "\f190";
-        margin-left:            -50px;
+        left:                   -$indicator-width;
     }
     
-    a:hover h3:before {
+    a:hover:before {
         content:                "\f0a8";
     }
 }
 
+
 .next-post {
     text-align:                 right;
+    padding-right:              $indicator-width;
     
-    span,
-    h3 {
-        margin-right:           50px;
-    }
-    
-    h3:after {
+    a:after {
         content:                "\f18e";
-        margin-right:           -50px;
+        right:                  -$indicator-width;
     }
     
-    a:hover h3:after {
+    a:hover:after {
         content:                "\f0a9";
     }
 }
