@@ -15,29 +15,7 @@ layout:         default
     </div>
     {% endif %}
     {% if page.previous or page.next %}
-    <div>
-      <h2 style="text-align: center">Read more</h2>
-      <div class="contents-navigator-wrapper">
-        <div class="contents-navigator previous-post">
-          {% if page.previous %}
-          <a href="{{ page.previous.url | prepend: baseurl }}" title="{{ page.previous.title }}">
-            <span>Previous post</span>
-            <h3>{{ page.previous.title }}</h3>
-            <span class="posted-date">Published on {{ page.previous.date | date: "%b %d, %Y" }}</span>
-          </a>
-          {% endif %}
-        </div>
-        <div class="contents-navigator next-post">
-          {% if page.next %}
-          <a href="{{ page.next.url | prepend: baseurl }}" title="{{ page.next.title }}">
-            <span>Next post</span>
-            <h3>{{ page.next.title }}</h3>
-            <span class="posted-date">Published on {{ page.next.date | date: "%b %d, %Y" }}</span>
-          </a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
+      {% include read-more.html %}
     {% endif %}
   </footer>
 </article>

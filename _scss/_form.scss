@@ -88,6 +88,11 @@ body {
     display:                    -ms-flex;
     display:                    -o-flex;
     display:                    flex;
+    
+    @media #{$large} {
+        display:                none;
+    }
+    
     align-items:                center;
     justify-content:            center;
     
@@ -241,6 +246,10 @@ body {
     margin-top:                 30px;
     padding:                    30px 20px;
     
+    @media #{$medium} {
+        padding:                30px 50px;
+    }
+    
     box-shadow:                 0 0 5px $article-shadow-color;
     border-radius:              3px;
     
@@ -268,7 +277,8 @@ body {
     @include                    font(16);
     
     p  > a,
-    li > a {
+    li > a,
+    .notice > a {
         border-bottom:          1px dotted lighten($link-color, 30);
         
         &:not(.reversefootnote):before {
@@ -294,6 +304,14 @@ body {
     color:                      $article-metadata-color;
     font-size:                  0.75em;
     text-transform:             uppercase;
+}
+
+
+.reading-time {
+    @media #{$small} {
+        display:                inline;
+        float:                  right;
+    }
 }
 
 
