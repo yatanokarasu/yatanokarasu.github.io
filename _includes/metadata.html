@@ -6,4 +6,4 @@
 <meta name="author" content="{{ site.author.name }}" />
 <meta http-equiv="cleartype" content="on">
 <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-<title>{% if page.layout == 'post' %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
+<title>{% if page.name != 'index.html' %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
