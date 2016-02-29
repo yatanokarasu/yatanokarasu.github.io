@@ -35,9 +35,16 @@ body {
             
             list-style:         none;
         }
-    }
-    @media #{$large} {
         
+        @media #{$large} {
+            position:           inherit;
+            float:              right;
+            
+            background-color:   transparent;
+            
+            padding:            0;
+            right:              0;
+        }
     }
 }
 
@@ -163,6 +170,10 @@ body {
     
     &:not(:checked) ~ nav {
         display:                none;
+        
+        @media #{$large} {
+            display:            inline-block;
+        }
     }
     
     &:checked {
@@ -194,6 +205,13 @@ body {
 }
 
 
+.menu-list {
+    @media #{$large} {
+        float:                  left;
+    }
+}
+
+
 .menu-entry {
     display:                    inline-block;
     
@@ -208,7 +226,31 @@ body {
     &:hover {
         color:                  lighten($toggle-menu-link-color, 40);
         text-shadow:            0 0 1px darken($toggle-menu-link-color, 30);
-        border-left:            5px solid $menu-entry-border-color;
+        border-left:            5px solid $toggle-menu-entry-border-color;
+        
+        @media #{$large} {
+            color:              darken($base-color, 10);
+            text-shadow:        0 0 1px lighten($base-color, 10);
+            
+            border-top:         5px solid $menu-entry-border-color;
+            border-left:        0;
+        }
+    }
+    
+    @media #{$large} {
+        display:                table-cell;
+        padding:                0 20px;
+        
+        width:                  inherit;
+        height:                 70px;
+        
+        border-top:             5px solid transparent;
+        border-bottom:          5px solid transparent;
+        border-left:            0;
+        
+        vertical-align:         middle;
+        
+        color:                  lighten($base-color, 10);
     }
 }
 
