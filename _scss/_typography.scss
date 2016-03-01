@@ -45,6 +45,8 @@ a {
     text-decoration:    none;
     color:              $link-color;
     
+    @include            transition(all 0.3s ease);
+    
     &:hover,
     &:active {
         outline:        0;
