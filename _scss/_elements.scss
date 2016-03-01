@@ -65,8 +65,14 @@ figure.center img {
     float:              none;
 }
 
+.image-left,
+.image-right {
+    margin:             1em;
+}
+
 .image-left {
     float:              none;
+    margin-left:        0;
     
     @media #{$medium} {
         float:          left;
@@ -75,6 +81,7 @@ figure.center img {
 
 .image-right {
     float:              none;
+    margin-right:       0;
     
     @media #{$medium} {
         float:          right;
@@ -95,5 +102,19 @@ iframe {
 
 
 a {
-    word-wrap:      break-word;
+    word-wrap:          break-word;
+}
+
+
+hr {
+    display:            block;
+    
+    margin:             1em 0;
+    padding:            0;
+    
+    height:             1px;
+    
+    border:             0;
+    border-top:         1px solid #CCCCCC;
+    border-bottom:      1px solid #FFFFFF;
 }
