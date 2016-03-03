@@ -15,6 +15,24 @@ markdown: kramdown
 
 paginate: 5
 
+menus:
+  - title:  'Home'
+    url:    '/'
+    icon:   'home'
+  - title:  'Archives'
+    url:    '/archives'
+    icon:   'archive'
+  - title:  'Categories'
+    url:    '/categories'
+    icon:   'folder-open'
+  - title:  'Tags'
+    url:    '/tags'
+    icon:   'tags'
+  - title:  'About'
+    url:    '/about'
+    icon:   'question-circle'
+
+
 gems:
   - jekyll-paginate
   - jekyll-gist

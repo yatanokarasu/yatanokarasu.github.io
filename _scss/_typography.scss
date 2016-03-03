@@ -107,8 +107,20 @@ blockquote {
 // List items
 // -----------------------------------------------------------------------------
 
-.contents-entry li {
-    margin-bottom:      7px;
+.contents-entry {
+    dl {
+        @media #{$small} {
+            padding-left:       40px;
+        }
+    }
+    
+    dt {
+        font-weight:        bold;
+    }
+    
+    li, dd {
+        margin-bottom:      7px;
+    }
 }
 
 
