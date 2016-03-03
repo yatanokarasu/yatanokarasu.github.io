@@ -87,9 +87,6 @@
 // .transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
 @mixin transition($transition) {
     -webkit-transition :              $transition;
-    -moz-transition :                 $transition;
-    -o-transition :                   $transition;
-    transition :                      $transition;
 }
 
 // .translate(VALUE, VALUE)

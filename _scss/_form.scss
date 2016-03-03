@@ -27,6 +27,7 @@ body {
         background-color:       $toggle-menu-back-color;
         padding-top:            $page-header-height;
         
+        top:                    0;
         right:                  -$toggle-menu-width;
         
         ul {
@@ -37,8 +38,9 @@ body {
         }
         
         @media #{$large} {
-            position:           inherit;
+            position:           relative;
             float:              right;
+            top:                0;
             
             background-color:   transparent;
             
@@ -53,6 +55,8 @@ body {
 }
 
 .page-header-wrapper {
+    position:                   relative;
+    
     padding:                    0 10px;
     margin:                     0 auto;
     
@@ -231,6 +235,44 @@ body {
 }
 
 
+.search-link-wrapper {
+    display:                    inline-block;
+    float:                      right;
+}
+
+
+.search-link {
+    display:                    table-cell;
+    
+    padding-left:               10px;
+    
+    @media #{$small} {
+        padding-left:           20px;
+        padding-right:          10px;
+    }
+    
+    height:                     70px;
+        
+    border-top:                 5px solid transparent;
+    border-bottom:              5px solid transparent;
+    border-left:                0;
+    
+    vertical-align:             middle;
+    
+    color:                      lighten($base-color, 10);
+    
+    @include                    transition(all 0.3s ease);
+    
+    &:hover {
+        color:                  darken($base-color, 10);
+        text-shadow:            0 0 1px lighten($base-color, 10);
+        
+        border-top:             5px solid $menu-entry-border-color;
+        border-left:            0;
+    }
+}
+
+
 .menu-entry {
     display:                    inline-block;
     
@@ -260,7 +302,7 @@ body {
     
     @media #{$large} {
         display:                table-cell;
-        padding:                0 20px;
+        padding:                0 10px;
         
         width:                  inherit;
         height:                 70px;
