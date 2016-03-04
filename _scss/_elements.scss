@@ -9,7 +9,7 @@ figure {
     padding:            10px 0;
     
     img {
-        margin-bottom:  10px;
+        margin:         5px;
     }
     
     a {
@@ -33,7 +33,6 @@ figure {
             img {
                 width: 48%;
                 float: left;
-                margin-right: 10px;
             }
             figcaption {
                 clear: left;
@@ -45,9 +44,8 @@ figure {
     &.third {
         @media #{$large} {
             img {
-                width: 31%;
+                width: 32%;
                 float: left;
-                margin-right: 10px;
             }
             
             figcaption {
