@@ -43,3 +43,36 @@ a.button:hover {
     border:                     2px solid $button-disable-border-color;
     color:                      $button-disable-text-color;
 }
+
+
+
+.balloon {
+    position:                   relative;
+    
+    display:                    inline-block;
+    padding:                    10px;
+    
+    background-color:           $code-primary-back-color;
+    color:                      white;
+    
+    font-family:                $code-font;
+    font-size:                  .9em;
+    
+    border-radius:              5px;
+    
+    &:after {
+        content:                "";
+        
+        display:                inline-block;
+        width:                  10px;
+        height:                 15px;
+        
+        position:               absolute;
+        bottom:                 -15px;
+        left:                   20;
+        
+        border-style:           solid;
+        border-color:           $code-primary-back-color transparent transparent transparent;
+        border-width:           15px 10px 0;
+    }
+}

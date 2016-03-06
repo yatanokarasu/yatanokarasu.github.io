@@ -672,18 +672,26 @@ body {
     z-index:                1500;
     
     display:                inline-block;
+    max-height:             80%;
+    max-width:              80%;
     
-    margin:                 0 15px;
-    padding:                15px;
+    & > img {
+        object-fit:         contain;
+        
+        @media (orientation: portrait) {
+            width:      100%;
+        }
+        @media (orientation: landscape) {
+            height:     100%;
+        }
+    }
     
-    background-color:       white;
-    @include                border-rounded(5px);
     
-    
-    @media #{$small} {
+    @media #{$medium} {
         margin:             0 50px;
         padding:            20px;
         
+        background-color:   white;
         @include            border-rounded(15px);
     }
 }

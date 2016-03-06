@@ -29,7 +29,7 @@ figure {
     }
     
     &.half {
-        @media #{$large} {
+        @media #{$medium} {
             img {
                 width: 48%;
                 float: left;

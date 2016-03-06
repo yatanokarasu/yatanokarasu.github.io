@@ -1,16 +1,15 @@
 {% assign class = include.class %}
-{% assign src = include.src %}
 {% assign caption = include.caption %}
 {% assign width = include.width %}
 
 <figure class="{{ class }}">
-  <a href="#modal-window"><img src="{{ src }}"{% if width != "" %} width="{{ width }}"{% endif %}></a>
+  <a href="#{{ include.id }}"><img src="{{ include.src }}"{% if width != "" %} width="{{ width }}"{% endif %}></a>
   <figcaption>{{ caption }}</figcaption>
 </figure>
 
-<div id="modal-window" class="modal-pane">
+<div id="{{ include.id }}" class="modal-pane">
   <div class="modal-contents">
-    <img src="{{ src }}">
+    <img src="{{ include.src }}">
   </div>
   <a href="#!" class="modal-close"></a>
 </div>
