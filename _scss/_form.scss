@@ -631,3 +631,74 @@ body {
         display:            block;
     }
 }
+
+
+
+// -----------------------------------------------------------------------------
+// Modal window
+// -----------------------------------------------------------------------------
+
+.modal-pane {
+    position:               fixed;
+    top:                    0;
+    bottom:                 0;
+    right:                  0;
+    left:                   0;
+    z-index:                1000;
+    
+    opacity:                0;
+    
+    @include                translate(0, 100%);
+    @include                transition(opacity .3s ease);
+    
+    &:target {
+        //display:            block;
+        display:            -webkit-inline-flex;
+        display:            -mos-inline-flex;
+        display:            -ms-inline-flex;
+        display:            -o-inline-flex;
+        display:            inline-flex;
+        justify-content:    center;
+        align-items:        center;
+        opacity:            1;
+        
+        @include            translate(0, 0);
+    }
+}
+
+
+.modal-contents {
+    position:               relative;
+    z-index:                1500;
+    
+    display:                inline-block;
+    
+    margin:                 0 15px;
+    padding:                15px;
+    
+    background-color:       white;
+    @include                border-rounded(5px);
+    
+    
+    @media #{$small} {
+        margin:             0 50px;
+        padding:            20px;
+        
+        @include            border-rounded(15px);
+    }
+}
+
+
+.modal-close {
+    position:               absolute;
+    
+    display:                block;
+    z-index:                1200;
+    
+    top:                    0;
+    left:                   0;
+    right:                  0;
+    bottom:                 0;
+    
+    background-color:       rgba(0,0,0,0.5);
+}
