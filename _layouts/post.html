@@ -8,10 +8,16 @@ layout:         default
     {{ content }}
   </section>
   <footer class="contents-footer">
+    {% if page.categories.size != 0 %}
+    <div style="text-align: center">
+      <h2>Categories of this post</h2>
+      <span class="tags">{% for category in page.categories %}<a href="{{ site.url }}/categories#{{ category }}" title="categories of this post" class="tag"><span class="entry">{{ category }}</span></a>{% endfor %}</span>
+    </div>
+    {% endif %}
     {% if page.tags.size != 0 %}
     <div style="text-align: center">
       <h2>Tagged as follows</h2>
-      <span class="tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags#{{ tag }}" title="Pages tagged {{ tag }}" class="tag"><span class="entry">{{ tag }}</span></a>{% endfor %}</span>
+      <span class="tags">{% for tag in page.tags %}<a href="{{ site.url }}/tags#{{ tag }}" title="tagged as {{ tag }}" class="tag"><span class="entry">{{ tag }}</span></a>{% endfor %}</span>
     </div>
     {% endif %}
     {% if page.previous or page.next %}
