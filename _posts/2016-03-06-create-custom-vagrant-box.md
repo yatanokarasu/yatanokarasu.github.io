@@ -45,13 +45,14 @@ Select [New] menu on toolbar.
     class="half center"
 %}
 
+{: #ref-vm-name}
 Set virtual machine name. This name will be used later when Vagrant box file.  
 VM名を設定します。この名前は、Vagrant boxファイルを作成する際に使用します。
 {% include modal-image
     id="vm-name"
     src="/images/posts/20160306/virtual-box-vm-name.png"
     class="half center"
-%}
+%}}
 
 Assign virtual machine memory. RAM size is enough 512MB.  
 仮想マシンのメモリを割り当てます。512MBで良いです。
@@ -130,7 +131,7 @@ You have to add rule from `127.0.0.1:2222` to `:22` (Guest IP is empty).
 %}
 
 
-## Configurations OS/Kernel parameters
+## Configure OS/Kernel parameters
 
 Login to virtual machine, and do as follows by `root` user.  
 仮想マシンにログインして、以下を`root`ユーザで行います。
@@ -206,7 +207,7 @@ I did as follows:
 #### Install useful packages
 
 ~~~
-# yum -y install man nslookup vim
+# yum -y install man nslookup rsync tree vim 
 ~~~
 
 
@@ -230,7 +231,7 @@ set ruler
 "---- encoding ----
 set termencoding=utf-8
 set encoding=utf-8
-set fileformats=unix,doc,mac
+set fileformats=unix,dos,mac
 set fileencoding=utf-8
 set fileencodings=utf-8,shift-jis
 
@@ -262,7 +263,7 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 
-alias egrep="grep --color=auto"
+alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 
 export EDITOR=vim
@@ -273,3 +274,67 @@ export HISTIGNORE="fg*:bg*:history*:cd*:ls*"
 export HISTSIZE=10000
 export HISTTIMEFORMAT="%Y/%m/%d %T: "
 ~~~
+
+
+### Configure SSH
+
+Disable `UseDNS`.  
+`UseDNS`を無効化します。
+
+~~~
+sed -i "s:^#UseDNS.*$:UseDNS no:" /etc/ssh/sshd_config
+~~~
+
+
+### Create vagrant user
+
+Create `vagrant` user with password `vagrant` .  
+ユーザ名/パスワードともに`vagrant`でユーザを作成します。
+
+~~~
+# useradd vagrant -G wheel
+# passwd vagrant
+# echo "vagrant ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers
+# sed -i "s:^.*requiretty:#Default requiretty:" /etc/sudoers
+~~~
+
+
+### Setup SSH public key
+
+Setup SSH public key of `vagrant` user.   
+`vagrant`ユーザのSSH公開鍵を設定します。
+
+~~~
+# su - vagrant
+$ mkdir ~/.ssh
+$ chmod 0700 ~/.ssh
+$ curl -L -o ~/.ssh/authorized_keys https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub
+$ chmod 0600 ~/.ssh/authorized_keys
+~~~
+
+
+That's end of configuration of virtual machine.  
+以上で仮想マシンの設定は終わりです。
+
+
+- - -
+
+## Create and add vagrant box file
+
+In Host OS, creates vagrant box file with the following command.
+[VM name](#ref-vm-name) will be specified `--base` option.
+Without `--output` option, the name of the box file is `package.box`.  
+ホストOS上で、以下のコマンドでvagrant boxファイルを作成します。[仮想マシン名](#ref-vm-name)を`--base`オプションに指定します。
+`--output`オプション無しでは、boxファイルの名前は`package.box`です。
+
+~~~
+> vagrant package --base CentOS6.7_x64
+~~~
+
+After that, add the box file to vagrant with name as you like.
+続いて、作成したboxファイルを名前を指定してVagrantに追加します。
+
+~~~
+> vagrant box add --name centos6.7_x64 package.box
+~~~
+
