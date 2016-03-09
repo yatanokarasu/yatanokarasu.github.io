@@ -112,6 +112,10 @@ blockquote {
         @media #{$small} {
             padding-left:       40px;
         }
+        
+        dl {
+            padding:        0;
+        }
     }
     
     dt {
@@ -163,7 +167,8 @@ pre {
 }
 
 p,
-li {
+li,
+dl {
     code {
         font-size:          .8em;
         
