@@ -113,8 +113,17 @@ blockquote {
             padding-left:       40px;
         }
         
+        .days-header {
+            float:              left;
+        }
+        
         dl {
-            padding:        0;
+            padding:            0;
+        }
+            
+        ul {
+            list-style:     none;
+            padding-left:   50px;
         }
     }
     

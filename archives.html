@@ -41,7 +41,7 @@ permalink:      /archives/
   {% endif %}
   {% if first_entry_for_day %}
         {% assign lower = post.date | date: "%d" | slice: 1 %}
-        <dt><time datetime="{{ post.date | date: "%F" }}">{{ this_day }}{% case lower %}{% when '1' %}st{% when '2' %}nd{% when '3' %}rd{% else %}th{% endcase %}</time></dt>
+        <dt class="days-header"><time datetime="{{ post.date | date: "%F" }}">{{ this_day }}{% case lower %}{% when '1' %}st{% when '2' %}nd{% when '3' %}rd{% else %}th{% endcase %}</time></dt>
         <dd style="margin-left: 0">
           <ul>{% assign first_entry_for_day = false %}
   {% endif %}
