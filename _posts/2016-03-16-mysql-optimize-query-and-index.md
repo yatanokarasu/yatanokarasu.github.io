@@ -41,10 +41,10 @@ mysql> EXPLAIN SELECT * FROM Country, (SELECT * FROM City WHERE Population > 100
 出力内容の詳細は[公式ドキュメント](https://dev.mysql.com/doc/refman/5.6/ja/explain-output.html)が詳しいですが、
 自分なりにまとめてみたいと思います。
 
-###### Table of output columns
+#### Table of output columns
 
-| column         |  means                                   |
-|----------------|------------------------------------------|
+|  column        |  means                                   |
+|:---------------|:-----------------------------------------|
 | id             | identifier                               |
 | select_type    | Type of SELECT statement                 |
 | table          | Table name                               |
@@ -55,6 +55,32 @@ mysql> EXPLAIN SELECT * FROM Country, (SELECT * FROM City WHERE Population > 100
 | ref            | The columns compared by keys             |
 | row            | Number of rows                           |
 | Extra          | Additional information to resolve query  |
+{: rules="groups"}
 
 
-書きかけ。。。
+より細かい説明は以下のようです。
+
+id
+:   SELECT文の識別子。クエリ内で連番になります。NULLの場合もあるようです。
+
+select_type
+:   SELECT文の種類。主なものは以下表のとおり。他はちょっとよくわからなかった。。。要勉強。。。<br><br>
+
+    | select_type   | means                               |
+    |:--------------|:------------------------------------|
+    | SIMPLE        | 単純なSELECT(UNIONやサブクエリを含まない)   |
+    | PRIMARY       | もっとも外側のSELECT。最初にfetchされるテーブル |
+    | UNION         | UNION内の2つめ以降にfetchされるテーブル      |
+    | UNION RESULT  | UNIONの実行結果                        |
+    | SUBQUERY      | サブクエリ内の最初のクエリ                     |
+    | DERIVED       | 派生テーブルSELECT(FROM句内のサブクエリ)        |
+    {: rules="groups"}
+
+table
+:   参照しているテーブルの名前。具体的なテーブル名でなく、以下の値になることもあるようです。
+    
+    <union ___M___, ___N___>
+    :   ___M___ と ___N___ の`id`値の和集合への参照を意味します。
+    
+    <derived ___N___>
+    :   ___N___ の`id`値の派生テーブル(FROM句内のサブクエリ)結果への参照を意味します。
