@@ -133,6 +133,7 @@ blockquote {
     
     li, dd {
         margin-bottom:      7px;
+        word-wrap:          break-word;
     }
 }
 
@@ -177,7 +178,8 @@ pre {
 
 p,
 li,
-dl {
+dl,
+td {
     code {
         font-size:          .8em;
         

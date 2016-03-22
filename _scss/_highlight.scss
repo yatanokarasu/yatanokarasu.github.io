@@ -9,7 +9,7 @@ div.highlighter-rouge {
     background-color:   $code-primary-back-color;
     
     border:             1px solid darken($body-color, 5);
-    @include            border-rounded(3px);
+    @include            border-rounded(4px);
     
     font-size:          .9em;
     line-height:        1.4;
