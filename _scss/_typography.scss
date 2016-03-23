@@ -178,7 +178,6 @@ pre {
 
 p,
 li,
-dl,
 td {
     code {
         font-size:          .8em;
@@ -191,6 +190,18 @@ td {
         border:             1px solid lighten($code-primary-back-color, 65);
         @include            border-rounded(3px);
     }
+}
+
+dd > code {
+    font-size:          .8em;
+    
+    background-color:   lighten($code-primary-back-color, 80);
+    
+    margin:             0 2px;
+    padding:            0 5px;
+    
+    border:             1px solid lighten($code-primary-back-color, 65);
+    @include            border-rounded(3px);
 }
 
 

@@ -1,6 +1,6 @@
 ---
 layout:         post
-title:          "New commands for network configuration of RHEL7/CentOS7"
+title:          "New commands of RHEL7/CentOS7 for network configuration"
 description:    "The 'net-tools' package is deprecated from RHEL7/CentOS, we should use the 'iproute' package."
 keywords:       [CentOS7, iproute2]
 categories:     [Linux]
