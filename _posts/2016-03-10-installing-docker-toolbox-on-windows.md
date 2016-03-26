@@ -4,7 +4,7 @@ title:          "Installing Docker Toolbox on Windows OS"
 description:    "Docker Toolbox provides front-end client of docker in Windows OS."
 keywords:       [Docker, Docker Toolbox]
 categories:     [Virtualization]
-tags:           [Docker, LXC, VirtualBox]
+tags:           [Docker, VirtualBox]
 ---
 
 WindowsでDockerを使うには、VirtualBoxなどを使用してDocker Engineを動作できるLinux環境を準備する必要があります。
