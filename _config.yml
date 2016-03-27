@@ -36,6 +36,7 @@ menus:
 gems:
   - jekyll-paginate
   - jekyll-gist
+  - jekyll-plantuml
 
 sass:
   sass_dir: _scss
