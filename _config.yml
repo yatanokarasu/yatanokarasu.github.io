@@ -32,7 +32,6 @@ menus:
     url:    '/about'
     icon:   'question-circle'
 
-
 gems:
   - jekyll-paginate
   - jekyll-gist
