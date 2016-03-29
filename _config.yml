@@ -42,9 +42,6 @@ sass:
   sass_dir: _scss
   style: compressed
 
-plantuml:
-  plantuml_jar: bin/plantuml.jar
-
 exclude:
   - README.md
   - LICENSE
