@@ -1,2 +1,2 @@
 {% assign src = include.src | strip_newlines %}
-<img src='http://g.gravizo.com/g{{ src }}'>
+<img src='http://g.gravizo.com/g?{{ src }}'>
