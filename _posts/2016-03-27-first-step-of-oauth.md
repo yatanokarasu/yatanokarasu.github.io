@@ -65,40 +65,43 @@ __ユーザはQiita(コンシューマ)のログインにGithub(サービスプ�
 
 これをシーケンス図は以下の通りです。
 
-{% plantuml %}
-hide footbox
+{% include gravizo
+  src='
+@startuml
+hide footbox;
 
-participant "User\n(Resource Owner)" as user
-participant "Consumer\n(ex. Qiita)" as consumer
-participant "Service Provider\n(ex. Github)" as provider
+participant "User\n(Resource Owner)" as user;
+participant "Consumer\n(ex. Qiita)" as consumer;
+participant "Service Provider\n(ex. Github)" as provider;
 
+consumer ->  provider : 0. receive authorization and get Consumer Key & Secret;
+consumer <-- provider : Consumer Key & Secret;
 
-consumer ->  provider : 0. receive authorization and get Consumer Key & Secret
-consumer <-- provider : Consumer Key & Secret
+|||;
 
-|||
+user     ->  consumer : 1. use service;
+consumer ->  provider : 2. get unauthorized token with Consumer Key & Secret;
+consumer <-- provider : unauthorized token;
+user     <-- consumer : <<302 Found>> with unauthorized token;
+user     ->  provider : 3. redirect to Service Provider with unauthorized token;
+user     <-- provider : show authentication page to authorize consumer;
 
-user     ->  consumer : 1. use service
-consumer ->  provider : 2. get unauthorized token with Consumer Key & Secret
-consumer <-- provider : unauthorized token
-user     <-- consumer : <<302 Found>> with unauthorized token
-user     ->  provider : 3. redirect to Service Provider with unauthorized token
-user     <-- provider : show authentication page to authorize consumer
+|||;
 
-|||
+user     ->  provider : 4. authenticate (login);
+user     <-- provider : <<302 Found>> with <b>authorized token</b>;
+user     ->  consumer : 5. redirect to Consumer callback URL with <b>authorized token</b>;
 
-user     ->  provider : 4. authenticate (login)
-user     <-- provider : <<302 Found>> with <b>authorized token</b>
-user     ->  consumer : 5. redirect to Consumer callback URL with <b>authorized token</b>
+|||;
 
-|||
+consumer ->  provider : 6. exchange authorized token for <b>access token</b>;
+consumer <-- provider : <b>access token</b>;
 
-consumer ->  provider : 6. exchange authorized token for <b>access token</b>
-consumer <-- provider : <b>access token</b>
+|||;
 
-|||
+consumer ->  provider : 7. access to API with <b>access token</b>;
+consumer <-- provider : result;
+user     <-- consumer : result;
 
-consumer ->  provider : 7. access to API with <b>access token</b>
-consumer <-- provider : result
-user     <-- consumer : result
-{% endplantuml %}
+@enduml;'
+%}
