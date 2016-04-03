@@ -183,6 +183,14 @@ After reboot, insert VirtualBox Guest Additions's image CD to virtual media driv
 # umount /media
 ~~~
 
+__Add on 3rd Apr, 2016__
+
+CentOS7の場合は下記も追加
+
+~~~
+# yum -y install kernel-headers bzip2 make dkms gcc-c++
+~~~
+
 
 ### Customize as you like
 
