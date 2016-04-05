@@ -179,7 +179,7 @@ pre {
 p,
 li,
 td {
-    code {
+    & > code {
         font-size:          .8em;
         
         background-color:   lighten($code-primary-back-color, 80);
