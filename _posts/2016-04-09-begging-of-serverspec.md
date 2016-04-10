@@ -60,9 +60,9 @@ $
 
 The `sample_spec.rb` file create as default tests whether `httpd` pakcages is installed and running or not.
 
-<span class="balloon">spec/test/sample_spec.rc</span>
+<span class="balloon">spec/test/sample_spec.rb</span>
 
-~~~
+~~~ ruby
 require 'spec_helper'
 
 describe package('httpd'), :if => os[:family] == 'redhat' do
@@ -344,3 +344,30 @@ ruby -I'/lib/ruby/gems/2.3.0/gems/rspec-support-3.4.1/lib';'/lib/ruby/gems/2.3.0
 
 ~~~
 
+
+# How to use SSH configuration
+
+By default Serverspec use `~/.ssh/config`, this section represents hot to use SSH config file stored in anywhere.
+
+1.  Edit `./spec/spec_helper.rb`
+    
+    ~~~ diff
+    --- before
+    +++ after
+    @@ -16,4 +16,8 @@
+
+    host = ENV['TARGET_HOST']
+
+    -options = Net::SSH::Config.for(host)
+    +unless ENV['SSH_CONFIG_FILE']
+    +  options = Net::SSH::Config.for(host)
+    +else
+    +  options = Net::SSH::Config.for(host, files=[ENV['SSH_CONFIG_FILE']])
+    +end
+    ~~~
+
+2.  Run `rake spec` with `SSH_CONFIG_FILE` env variable.
+    
+    ~~~
+    $ SSH_CONFIG_FILE=<ssh_config_file> rake spec
+    ~~~
