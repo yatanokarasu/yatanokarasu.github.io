@@ -1,0 +1,135 @@
+site_name: Memoizer
+copyright: Copyright &copy; Yusuke TAKEI
+
+repo_name: yatanokarasu.github.io
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yatanokarasu/
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/yusuke-takei-154b67133/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: white
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: pink
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+
+    - toc.follow
+
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+
+    - search.highlight
+    - search.suggest
+    - search.share
+  icon:
+    logo: logo
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/stop-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+plugins:
+  - glightbox
+  - tags:
+      tags_file: tags.md
+  - search:
+      lang:
+        - en
+        - ja
+      separator: '[\s\-,:!=\[\]()"/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+
+  # https://squidfunk.github.io/mkdocs-material/reference/formatting/
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.betterem:
+      smart_enable: all
+
+  - pymdownx.smartsymbols
+  - pymdownx.blocks.caption
+
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+
+  # See: https://squidfunk.github.io/mkdocs-material/reference/admonitions/
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # See: https://squidfunk.github.io/mkdocs-material/reference/lists/
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  # See: https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
