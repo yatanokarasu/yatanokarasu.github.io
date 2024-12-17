@@ -1,0 +1,9 @@
+{
+    // See: https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions
+    "recommendations": [
+        "DavidAnson.vscode-markdownlint",
+        "mosapride.zenkaku",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces",
+    ]
+}

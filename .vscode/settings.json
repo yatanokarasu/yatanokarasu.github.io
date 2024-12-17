@@ -1,0 +1,34 @@
+// https://code.visualstudio.com/docs/getstarted/settings
+{
+    "editor.trimAutoWhitespace": true,
+
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8",
+    "files.insertFinalNewline": true,
+
+    "markdownlint.config": {
+        "code-block-style": false,
+        "first-line-h1": false,
+        "line-length": {
+            "code_blocks": false,
+            "tables": false,
+        },
+        "list-marker-space": false,
+        "no-empty-links": false,
+        "no-inline-html": false,
+        "no-multiple-blanks": false,
+        "no-space-in-emphasis": false,
+        "ol-prefix": false,
+        "ul-indent": false,
+        "ul-style": false,
+    },
+
+    // specific configurations for markdown
+    "[markdown]": {
+        "editor.tabSize": 4,
+        "editor.indentSize": "tabSize",
+        "files.trimTrailingWhitespace": false,
+        "editor.renderWhitespace": "boundary"
+    },
+
+}
