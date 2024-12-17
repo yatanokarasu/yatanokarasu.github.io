@@ -1,0 +1,6 @@
+nav:
+  - Home: index.md
+  - Guides: guides
+  - Tags: tags.md
+
+collapse: false

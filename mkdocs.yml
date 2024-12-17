@@ -1,10 +1,17 @@
 site_name: Memoizer
+site_url: https://yatanokarasu.github.io/
 copyright: Copyright &copy; Yusuke TAKEI
 
 repo_name: yatanokarasu.github.io
+repo_url: https://github.com/yatanokarasu/yatanokarasu.github.io
+edit_uri: edit/main/docs/
 
 extra_css:
   - assets/stylesheets/extra.css
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - assets/javascripts/tablesort.js
 
 extra:
   generator: false
@@ -13,6 +20,17 @@ extra:
       link: https://github.com/yatanokarasu/
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/yusuke-takei-154b67133/
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    actions:
+      - accept
+      - reject
+      - manage
 
 theme:
   name: material
@@ -34,14 +52,14 @@ theme:
     - navigation.instant.progress
     - navigation.tracking
     - navigation.tabs
-    - navigation.sections
+    - navigation.tabs.sticky
     - navigation.expand
-    - navigation.indexes
     - navigation.top
     - navigation.footer
 
     - toc.follow
 
+    - content.action.view
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
@@ -72,6 +90,7 @@ theme:
 
 plugins:
   - glightbox
+  - awesome-pages
   - tags:
       tags_file: tags.md
   - search:
@@ -79,6 +98,16 @@ plugins:
         - en
         - ja
       separator: '[\s\-,:!=\[\]()"/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+      minify_css: true
+      minify_js: true
+      htmlmin_opts:
+        remove_empty_space: true
+      css_files:
+        - assets/stylesheets/extra.css
+      js_files:
+        - assets/javascripts/tablesort.js
 
 markdown_extensions:
   - abbr
@@ -105,6 +134,12 @@ markdown_extensions:
 
   - pymdownx.smartsymbols
   - pymdownx.blocks.caption
+
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: yatanokarasu
+      repo: yatanokarasu.github.io
 
   - pymdownx.inlinehilite
   - pymdownx.snippets
@@ -133,3 +168,5 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+
+# # nav: omitted, because we're using the awesome-pages plugin (https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin)

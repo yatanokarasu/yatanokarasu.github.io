@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 mkdocs-material = "*"
 mkdocs-glightbox = "*"
+mkdocs-awesome-pages-plugin = "*"
+mkdocs-minify-plugin = "*"
 
 [dev-packages]
 
