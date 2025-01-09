@@ -4,11 +4,13 @@ code {
     font-family: 'Roboto Mono', monospace;
 }
 
-div.language-shell.highlight>pre>code {
+div.language-shell.highlight>pre>code,
+div.language-bash.highlight>pre>code {
     padding-left: 2.5em;
 }
 
-div.admonition>div.language-shell.highlight>pre>code {
+div.admonition>div.language-shell.highlight>pre>code,
+div.admonition>div.language-bash.highlight>pre>code {
     padding-left: 3em;
 }
 
@@ -42,11 +44,13 @@ div.highlight>pre>code:before {
     left: 16px;
 }
 
-div.language-shell.highlight>pre>code:before {
+div.language-shell.highlight>pre>code:before,
+div.language-bash.highlight>pre>code:before {
     content: '$';
 }
 
-div.language-shell.highlight.root>pre>code:before {
+div.language-shell.highlight.root>pre>code:before,
+div.language-bash.highlight.root>pre>code:before {
     content: '#';
 }
 
