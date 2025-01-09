@@ -8,6 +8,7 @@
 
     "markdownlint.config": {
         "code-block-style": false,
+        "fenced-code-language": false,
         "first-line-h1": false,
         "line-length": {
             "code_blocks": false,
