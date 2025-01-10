@@ -8,6 +8,7 @@ mkdocs-material = "*"
 mkdocs-glightbox = "*"
 mkdocs-awesome-pages-plugin = "*"
 mkdocs-minify-plugin = "*"
+mkdocs-git-revision-date-localized-plugin = "*"
 
 [dev-packages]
 
