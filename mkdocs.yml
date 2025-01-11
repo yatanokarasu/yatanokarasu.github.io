@@ -14,7 +14,6 @@ extra_javascript:
   - assets/javascripts/tablesort.js
 
 extra:
-  generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/yatanokarasu/
