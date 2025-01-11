@@ -51,7 +51,7 @@ Windows 11 になってからずいぶんと WSL2 のインストールが簡単
             2.  `OptionalFeatures.exe` と入力して ++enter++ を押す
 
     1.  以下のような画面が開くので、「Linux 用 Windows サブシステム」と「仮想マシン プラットフォーム」を有効にする  
-        ![「Windows の機能の有効化または無効化」画面](optional-features.png)
+        ![「Windows の機能の有効化または無効化」画面](./images/optional-features.png)
 
 
 ## WSL のインストール
