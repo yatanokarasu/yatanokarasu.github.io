@@ -117,11 +117,15 @@ plugins:
 
   # Datetime
   - git-revision-date-localized:
-      type: date
+      type: custom
+      custom_format: '%b %d, %Y'
       timezone: Asia/Tokyo
       locale: en
       fallback_to_build_date: false
       enable_creation_date: true
+      exclude:
+        - index.md
+        - tags.md
 
 markdown_extensions:
   - abbr
