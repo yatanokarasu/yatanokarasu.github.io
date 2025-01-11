@@ -88,8 +88,13 @@ theme:
     code: Roboto Mono
 
 plugins:
+  # For images
   - glightbox
+
+  # For navigation
   - awesome-pages
+
+  # Built-in
   - tags:
       tags_file: tags.md
   - search:
@@ -97,6 +102,8 @@ plugins:
         - en
         - ja
       separator: '[\s\-,:!=\[\]()"/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+  # Bundle
   - minify:
       minify_html: true
       minify_css: true
@@ -107,6 +114,8 @@ plugins:
         - assets/stylesheets/extra.css
       js_files:
         - assets/javascripts/tablesort.js
+
+  # Datetime
   - git-revision-date-localized:
       type: date
       timezone: Asia/Tokyo
