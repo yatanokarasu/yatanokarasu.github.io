@@ -2,38 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://yatanokarasu.github.io/</loc>
-         <lastmod>2025-01-11</lastmod>
+         <lastmod>2025-01-19</lastmod>
     </url>
     <url>
          <loc>https://yatanokarasu.github.io/blog/</loc>
-         <lastmod>2025-01-11</lastmod>
+         <lastmod>2025-01-19</lastmod>
     </url>
     <url>
          <loc>https://yatanokarasu.github.io/blog/2025/01/11/First%20Post/</loc>
-         <lastmod>2025-01-11</lastmod>
+         <lastmod>2025-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://yatanokarasu.github.io/blog/2025/01/19/Kiota%20CLI%20for%20generating%20an%20API%20client/</loc>
+         <lastmod>2025-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://yatanokarasu.github.io/blog/2025/01/19/Wvlet%20that%20is%20flow-style%20query%20language/</loc>
+         <lastmod>2025-01-19</lastmod>
     </url>
     <url>
          <loc>https://yatanokarasu.github.io/guides/windows/wsl/install-podman/</loc>
-         <lastmod>2025-01-11</lastmod>
+         <lastmod>2025-01-19</lastmod>
     </url>
     <url>
          <loc>https://yatanokarasu.github.io/guides/windows/wsl/install-wsl2/</loc>
-         <lastmod>2025-01-11</lastmod>
+         <lastmod>2025-01-19</lastmod>
     </url>
     <url>
          <loc>https://yatanokarasu.github.io/guides/windows/wsl/update-ubuntu-version/</loc>
-         <lastmod>2025-01-11</lastmod>
+         <lastmod>2025-01-19</lastmod>
     </url>
     <url>
          <loc>https://yatanokarasu.github.io/blog/archive/2025/</loc>
-         <lastmod>2025-01-11</lastmod>
+         <lastmod>2025-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://yatanokarasu.github.io/blog/category/tech-memo/</loc>
+         <lastmod>2025-01-19</lastmod>
     </url>
     <url>
          <loc>https://yatanokarasu.github.io/blog/category/misc/</loc>
-         <lastmod>2025-01-11</lastmod>
+         <lastmod>2025-01-19</lastmod>
     </url>
     <url>
          <loc>https://yatanokarasu.github.io/tags/</loc>
-         <lastmod>2025-01-11</lastmod>
+         <lastmod>2025-01-19</lastmod>
     </url>
 </urlset>
