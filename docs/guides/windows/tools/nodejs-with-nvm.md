@@ -4,7 +4,7 @@ tags:
   - Node.js
 ---
 
-# Install Node.js
+# Install Node.js via NVM for Windows
 
 Node.js は、 JavaScript の実行環境の 1 つ。
 ここでは、 Node.js のバージョン管理も行える NVM for Windows[^1] を使用してインストールを行う。
@@ -21,7 +21,7 @@ Node.js は、 JavaScript の実行環境の 1 つ。
     1.  [最新版のリリースページ](https://github.com/coreybutler/nvm/releases) から
         `nvm-setup.zip` をダウンロードする。
 
-    2.  Zip ファイルに `nvm-setup.exe` が含まれていますので、
+    2.  Zip ファイルに `nvm-setup.exe` が含まれているので、
         展開・実行して任意のフォルダにインストールする。
 
 === "Windows Package Manager を使ってインストール"
