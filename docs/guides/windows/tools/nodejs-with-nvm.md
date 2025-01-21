@@ -6,6 +6,11 @@ tags:
 
 # Install Node.js via NVM for Windows
 
+!!! warning
+
+    [FNM を使用した手順](./nodejs-with-fnm.md) の方が、
+    管理者権限のターミナルが不要なので便利かもです。
+
 Node.js は、 JavaScript の実行環境の 1 つ。
 ここでは、 Node.js のバージョン管理も行える NVM for Windows[^1] を使用してインストールを行う。
 
