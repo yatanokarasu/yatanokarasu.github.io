@@ -3,7 +3,7 @@ date: 2025-01-11
 authors: [yatanokarasu]
 categories:
   - Misc
-slug: First Post
+slug: first-post
 ---
 
 # 初投稿

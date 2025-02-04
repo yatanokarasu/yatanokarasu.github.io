@@ -6,7 +6,7 @@ tags:
   - OpenAPI
 categories:
   - Tech Memo
-slug: Kiota CLI for generating an API client
+slug: kiota-cli-for-generating-an-api-client
 ---
 
 # Microsoft が API クライアント生成ツール Kiota を提供しているらしい

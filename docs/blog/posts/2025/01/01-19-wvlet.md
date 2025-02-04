@@ -6,7 +6,7 @@ tags:
   - Query Language
 categories:
   - Tech Memo
-slug: Wvlet that is flow-style query language
+slug: wvlet-that-is-flow-style-query-language
 ---
 
 # Wvlet とかいうフロースタイルクエリ言語

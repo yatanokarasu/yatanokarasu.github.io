@@ -127,7 +127,7 @@ $ nvm list
     対してシンボリックリンクを作成するため、管理者権限を持ったコマンドプロンプトもしくは
     PowerShell で実行する必要がある。
 
-    [コチラの設定](./../configurations/symlink-as-non-root-user.md)を行っておけば、
+    [コチラの設定](./../../configurations/symlink-as-non-root-user.md)を行っておけば、
     管理者モードでターミナルを開かなくても、一般ユーザでもシンボリックリンクが
     作成できるようになる。
 

@@ -10,10 +10,7 @@
         "code-block-style": false,
         "fenced-code-language": false,
         "first-line-h1": false,
-        "line-length": {
-            "code_blocks": false,
-            "tables": false,
-        },
+        "line-length": false,
         "list-marker-space": false,
         "no-empty-links": false,
         "no-inline-html": false,
