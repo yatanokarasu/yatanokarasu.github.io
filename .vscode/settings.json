@@ -12,6 +12,7 @@
         "first-line-h1": false,
         "line-length": false,
         "list-marker-space": false,
+        "no-bare-urls": false,
         "no-empty-links": false,
         "no-inline-html": false,
         "no-multiple-blanks": false,

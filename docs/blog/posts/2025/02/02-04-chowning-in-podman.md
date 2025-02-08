@@ -2,15 +2,24 @@
 date: 2025-02-04
 authors: [yatanokarasu]
 tags:
-  - Podman
-  - Devcontainer
   - Container
+  - Devcontainer
+  - Podman
+  - WSL
 categories:
-  - Troubleshooting
+  - Tech Research
 slug: auto-chowning-in-container-with-podman
 ---
 
 # Podman で起動したコンテナ内の UID とホストから見た UID が勝手に変わる件について調べてみた
+
+!!! danger "(2025/02/08) 追記"
+
+    いろいろ試してて、 [Workspace の bind mount 周り](#devcontainer-で-root-以外で-workspace-と-bind-mount-したい)について
+    理解が足りなてかったところがあったので追記。
+
+    結論としては、自前の Dockerfile 作ったりしなくて良かった。  
+    （まぁ、普通に考えたら、 MS さんがそんな面倒なことさせるわけもないか。。。）
 
 Podman in WSL2 で [Devcontainer](https://containers.dev/) を拵えようとしてて、
 コンテナ内のユーザが `root` というのはセキュリティ的にどうなのかな？って思ったのがキッカケ。
@@ -57,16 +66,63 @@ Linux カーネルのユーザ名前空間の仕組みで制御されている�
 userns = "keep-id"
 ```
 
+!!! warning "2025/02/08 追記 その2"
+
+    `~/.config/containers/containers.conf` で、全コンテナに対して提供してしまうと、
+    たとえば docker.io/library/nginx のように 80/tcp で LISTEN しようとするプロセスは
+    `root` 権限が必要となるため、コンテナが起動しなくなってしまう。
+
+    なので、基本的には `--userns=keep-id` や環境変数 `#!bash PODMAN_USERNS=keep-id` を指定して
+    ホスト側とやり取りしたいコンテナだけに適用するのが望ましいかも。
+
+
 ## Devcontainer で root 以外で workspace と bind mount したい
 
 Devcontainer で `root` 以外のユーザで作業しつつ、ホスト側の
 ワークスペースを bind mount する場合は、 `userns` パラメータをいじるだけでは足りない。
+==`devcontainer.json` の `containerUser` に、ホスト側と同じ UID/GID を持ったコンテナ内のユーザ名を
+指定する必要がある。== 大体の場合、 WSL インストール時に作成したユーザは UID/GID 共に 1000 のはずなので、
+コンテナ内のユーザも UID/GID が 1000 のものを指定すれば良い。
+
+例えば、 Microsoft が提供している [vscode-devcontainers](https://hub.docker.com/r/microsoft/vscode-devcontainers) とかは、
+[Commons Utilities](https://github.com/devcontainers/features/tree/main/src/common-utils) を使って `vscode (UID/GID=1000)` の
+ユーザを用意してくれている[^1] ので、 `#!json "containerUser": "vscode"` を指定すると良い。
+
+### (2025/02/08 追記版) 実際の成功例
+
+`userns` を設定済であれば、以下の内容で devcontainer ↔️ コンテナ間でファイルの読み書きができるはず。
+今回は Microsoft から提供されている [devcontainers/base の dev-bullseye (Debian 11)](https://mcr.microsoft.com/en-us/artifact/mar/devcontainers/base/tags) を利用した、おそらくどの OS イメージでも同様に `vscode` ユーザが使えると思う。
+
+``` json title=".devcontainer/devcontainer.json"
+{
+    "name": "Test",
+
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:bullseye",
+
+    // 今回は vscode ユーザ直下に workspace というフォルダに bind mount させている
+    "workspaceFolder": "/home/vscode/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/workspace,type=bind",
+
+    // userns=keep-id を指定する
+    "runArgs": [
+        "--userns", "keep-id"
+    ],
+
+    "containerUser": "vscode"
+}
+```
+
+!!! danger "(2025/02/08) 追記"
+
+    以降の内容は不要でした (ただ、せっかく調査した記録なので、残しておきます)。
+
+    たとえば、 [コンテナ内のユーザの作成について](#コンテナ内のユーザの作成について)で記載している
+    Commons Utilities なんかは、前述の通り[^1]すでに取り込まれています。
 
 ### やり方
 
 結論から言えば、以下が必要になる。
 
-*   前述の `~/.config/containers/containers.conf` を作る
 *   Dockerfile の末尾の `USER UID[:GID]` に上記の UID/GID を指定する
 *   コンテナ内に、 WSL ユーザと同じ UID/GID を持つユーザを作っておく
 
@@ -172,3 +228,5 @@ USER 1000:1000
     }
 }
 ```
+
+[^1]: https://github.com/devcontainers/images/blob/4fd0a81cc6442d2d2c95a1380fd21de203d60d1b/src/base-debian/.devcontainer/devcontainer.json#L7-L13
