@@ -35,13 +35,15 @@ WSL の Ubuntu に Podman をインストールしてコンテナを扱える環
 
 !!! info
 
-    (本記事では、一旦手順は割愛するが)
-    もし、 Windows 側からインストールした Podman を操作したいのであれば、
-    以下のコマンドを実行してサービスとソケットを作成しておくと良い。
+    単にコンテナを使うだけなら不要だが、
+    DinD のようにコンテナ内からコンテナホストの Podman
+    を操作したい場合などは、以下のコマンドを実行して Podman の UNIX ソケットを作成しておく。  
+    (`/run/user/$(id -u)/podman/podman.socket` に作成される)
 
     ``` shell
-    mkdir -p ~/.config/systemd/user/ &&
+    mkdir -p ~/.config/systemd/user/
     sudo cp /usr/lib/systemd/user/podman.{service,socket} ~/.config/systemd/user/
+    systemctl --user enable --now podman.socket
     ```
 
 ## Podman でコンテナの動作確認
