@@ -118,3 +118,37 @@ Commercial support is available at
 </body>
 </html>
 ```
+
+!!! danger "Windows 側では IPv6 にのみ bind される (2025/02/18追記)"
+
+    上記のように `-p` でコンテナポートをホストに公開しているにもかかわらず、
+    ホストマシンの Windows からアクセスできない場合は、以下のようにしてIPv4 にバインドすること。
+
+    ``` shell
+    podman run ... -p 127.0.0.1:8080:80 ...
+    ```
+
+    理由としては、 Linux (WSL の Ubuntu) 上では `*:8080` として
+    IPv4/IPv6 のデュアルスタックで bind されるが、
+    Windows 側では `[::1]:8080` と [IPv6 にのみ bind されるため](https://github.com/containers/podman/issues/12292#issuecomment-1034165121)。
+
+    実際、[前述の NGINX 起動後](#podman-でコンテナの動作確認)、
+    WSL (Linux) 側とホスト (Windows) 側で違いを確認できる。
+
+    **WSL (Linux) 側**
+
+    `*:8080` なので、いずれの IP address でも 8080/tcp で bind されている。
+
+    ``` console
+    $ ss -lnpt | grep -i 8080
+    LISTEN 0    4096    *:8080      *:*    users:(("rootlessport",pid=252807,fd=11))
+    ```
+
+    **ホスト (Windows) 側**
+
+    `[::1]:8080` と、 IPv6 の Loopback アドレスにのみ bind されている (`0.0.0.0:8080` が無い)。
+
+    ``` console
+    PS1> netstat -ano | Select-String '8080'
+    TCP     [::1]:8080      [::]:0      LISTENING   13440
+    ```
