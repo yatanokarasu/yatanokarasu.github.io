@@ -15,7 +15,7 @@ Windows のローカルポリシーで管理者権限以外のユーザによる
 
 1.  ++win+r++ を押して、「ファイル名を指定して実行」ダイアログを開く
 
-1.  `gpedit.msc` と入力して ++enter++ を押します。
+1.  `gpedit.msc` と入力して ++enter++ を押す  
     「Microsoft 管理コンソール」起動に関する確認ダイアログは「はい」を選ぶ
 
     ![ファイル名を指定して実行](./images/symlinks/execute-commands.png)
