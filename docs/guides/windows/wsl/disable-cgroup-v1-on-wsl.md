@@ -14,7 +14,7 @@ tags:
 
     * **OS**: Windows 11 Pro 23H2
     * **WSL**: Ubuntu 24.04.01 LTS
-    * **Podman**: v4.9.3 (インストール手順は[コチラ](./../windows/wsl/install-podman.md))
+    * **Podman**: v4.9.3 (インストール手順は[コチラ](./../wsl/install-podman.md))
 
 [公式ドキュメント](https://kind.sigs.k8s.io/docs/user/rootless/)にも記載されている通り、
 Podman のような Rootless provider を実行する場合は CGroup v2 が必須となるが、
