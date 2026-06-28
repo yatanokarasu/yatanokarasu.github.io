@@ -1,7 +1,8 @@
 nav:
   - Home: index.md
   - Tutorials: tutorials
-  - Guides: guides
+  - Guides: guide
+  - Explanation: explanation
   - Tags: tags.md
   - Blog: blog
 
